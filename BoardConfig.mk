@@ -55,9 +55,6 @@ BOARD_USES_DRM_HWCOMPOSER ?= true
 
 USE_CAMERA_STUB ?= false
 
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 # This enables the wpa wireless driver
 BOARD_WPA_SUPPLICANT_DRIVER ?= NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB ?= private_lib_driver_cmd
