@@ -23,8 +23,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.com.android.dataroaming=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \	
-
+    wifi.interface=wlan0 \
+    ro.sf.lcd_density=160 \
+	
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.arch=x86 \
     persist.rtc_local_time=1 \
