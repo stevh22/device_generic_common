@@ -84,7 +84,6 @@ TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
 PRC_COMPATIBILITY_PACKAGE := true
 ZIP_OPTIMIZATION_NO_INTEGRITY := true
-INSTALL_PREFIX ?= cm-x86-$(VER)
 
 # Add needed cm tag for Bluez-x86
 CM_VERSION := 14.1
