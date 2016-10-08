@@ -14,6 +14,13 @@
 # limitations under the License.
 #
 
+#OpenGAPPS
+GAPPS_VARIANT := pico
+PRODUCT_PACKAGES += PrebuiltGmail \
+	CalendarGooglePrebuilt \
+	PrebuiltExchange3Google \
+	GoogleContacts
+
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
 PRODUCT_PROPERTY_OVERRIDES := \
