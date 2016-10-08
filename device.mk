@@ -107,5 +107,8 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common Bliss stuff.
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+
+#OpenGAPPS
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
