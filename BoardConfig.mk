@@ -14,13 +14,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE = $(if $(MKSQUASHFS),0,1610612736)
 # customize the malloced address to be 16-byte aligned
 BOARD_MALLOC_ALIGNMENT := 16
 
-# Enable dex-preoptimization to speed up the first boot sequence
-# of an SDK AVD. Note that this operation only works on Linux for now
-ifeq ($(HOST_OS),linux)
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_PIC := true
-endif
-
 # the following variables could be overridden
 TARGET_PRELINK_MODULE := false
 TARGET_NO_KERNEL ?= false
@@ -62,14 +55,9 @@ BOARD_USES_DRM_HWCOMPOSER ?= true
 
 USE_CAMERA_STUB ?= false
 
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 # This enables the wpa wireless driver
 BOARD_WPA_SUPPLICANT_DRIVER ?= NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB ?= private_lib_driver_cmd
 WPA_SUPPLICANT_VERSION ?= VER_2_1_DEVEL
-WIFI_DRIVER_MODULE_PATH ?= auto
 
 BOARD_GPU_DRIVERS ?= i915 i965 nouveau r300g r600g radeonsi swrast virgl vmwgfx
 ifneq ($(strip $(BOARD_GPU_DRIVERS)),)
