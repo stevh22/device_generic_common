@@ -118,3 +118,6 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
+
+# Get OpenGApps
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
