@@ -82,6 +82,7 @@ PRC_COMPATIBILITY_PACKAGE := true
 ZIP_OPTIMIZATION_NO_INTEGRITY := true
 
 # Blissful Building Options
+BLISS_AUDIO_MOD := viper
 #BLISS_BUILD_BLOCK := 1
 BLISSIFY := true
 BLISS_O3 := true
