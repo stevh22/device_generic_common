@@ -17,9 +17,9 @@
 #OpenGAPPS
 GAPPS_VARIANT := pico
 PRODUCT_PACKAGES += PrebuiltGmail \
-	CalendarGooglePrebuilt \
-	PrebuiltExchange3Google \
-	GoogleContacts
+    CalendarGooglePrebuilt \
+    PrebuiltExchange3Google \
+    GoogleContacts
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
@@ -31,7 +31,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.arch=x86 \
-    persist.rtc_local_time=1 \
+    # persist.rtc_local_time=1 \
 
 PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)init.rc),$(PRODUCT_DIR)init.rc:root/init.rc) \
