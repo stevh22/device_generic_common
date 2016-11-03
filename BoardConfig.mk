@@ -81,6 +81,9 @@ COMPATIBILITY_ENHANCEMENT_PACKAGE := true
 PRC_COMPATIBILITY_PACKAGE := true
 ZIP_OPTIMIZATION_NO_INTEGRITY := true
 
+# Add needed cm tag for Bluez-x86
+CM_VERSION := 13.0
+
 # Blissful Building Options
 #BLISS_AUDIO_MOD := viper
 #BLISS_BUILD_BLOCK := 1
