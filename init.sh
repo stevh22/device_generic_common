@@ -48,6 +48,7 @@ function init_hal_bluetooth()
 	case "$PRODUCT" in
 		T10*TA|HP*Omni*)
 			BTUART_PORT=/dev/ttyS1
+			set_property hal.bluetooth.uart.proto bcm
 			;;
 		MacBookPro8*)
 			rmmod b43
@@ -65,18 +66,16 @@ function init_hal_bluetooth()
 			modprobe btusb
 			;;
 		*)
-			for bt in $(lsusb -v | awk ' /Class:.E0/ { print $9 } '); do
+			for bt in $(busybox lsusb -v | awk ' /Class:.E0/ { print $9 } '); do
 				chown 1002.1002 $bt && chmod 660 $bt
 			done
-			modprobe btusb
 			;;
 	esac
 
 	if [ -n "$BTUART_PORT" ]; then
 		set_property hal.bluetooth.uart $BTUART_PORT
 		chown bluetooth.bluetooth $BTUART_PORT
-		start btattach:-B$BTUART_PORT
-		log -t hciconfig -p i "`hciconfig`"
+		start btattach
 	fi
 }
 
@@ -169,6 +168,7 @@ function init_hal_sensors()
 	[ -f /system/lib/hw/sensors.${ro_hardware}.so ] && return 0
 
 	local hal_sensors=kbd
+	local has_sensors=true
 	case "$(cat $DMIPATH/uevent)" in
 		*Lucid-MWE*)
 			set_property ro.ignore_atkbd 1
@@ -229,7 +229,14 @@ function init_hal_sensors()
 		*i7Stylus*)
 			set_property hal.sensors.iio.accel.matrix 1,0,0,0,-1,0,0,0,-1
 			;;
+		*ST70416-6*)
+			set_property hal.sensors.iio.accel.matrix 0,-1,0,-1,0,0,0,0,-1
+			;;
+		*ONDATablet*)
+			set_property hal.sensors.iio.accel.matrix 0,1,0,1,0,0,0,0,-1
+			;;
 		*)
+			has_sensors=false
 			;;
 	esac
 
@@ -242,6 +249,8 @@ function init_hal_sensors()
 	fi
 
 	set_property ro.hardware.sensors $hal_sensors
+	[ "$hal_sensors" != "kbd" ] && has_sensors=true
+	set_property config.override_forced_orient $has_sensors
 }
 
 function create_pointercal()
@@ -399,16 +408,6 @@ function do_bootcomplete()
 	post_bootcomplete
 }
 
-function do_hci()
-{
-	local hci=`hciconfig | grep ^hci | cut -d: -f1`
-	local btd="`getprop init.svc.bluetoothd`"
-	log -t bluetoothd -p i "$btd ($hci)"
-	if [ -n "`getprop hal.bluetooth.uart`" ]; then
-		[ "`getprop init.svc.bluetoothd`" = "running" ] && hciconfig $hci up
-	fi
-}
-
 PATH=/sbin:/system/bin:/system/xbin
 
 DMIPATH=/sys/class/dmi/id
@@ -448,9 +447,6 @@ case "$1" in
 		;;
 	bootcomplete)
 		do_bootcomplete
-		;;
-	hci)
-		do_hci
 		;;
 	init|"")
 		do_init

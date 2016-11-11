@@ -6,6 +6,7 @@ TARGET_BOARD_PLATFORM := android-x86
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_LINUX := true
 
 BOARD_USE_LEGACY_UI := true
 
@@ -77,7 +78,7 @@ TARGET_HARDWARE_3D := true
 BOARD_EGL_CFG ?= device/generic/common/gpu/egl_mesa.cfg
 endif
 
-BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.hardware=$(TARGET_PRODUCT) androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive
 TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
 
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
