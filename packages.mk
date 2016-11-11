@@ -69,7 +69,9 @@ PRODUCT_PACKAGES += \
     badblocks \
     e2fsck \
     fsck.exfat \
+    fsck.f2fs \
     mke2fs \
+    make_f2fs \
     mkfs.exfat \
     mkntfs \
     mount.exfat \
@@ -77,6 +79,11 @@ PRODUCT_PACKAGES += \
     ntfsfix \
     resize2fs \
     tune2fs \
+
+PRODUCT_PACKAGES += \
+    btattach \
+    hciconfig \
+    hcitool \
 
 # Third party apps
 PRODUCT_PACKAGES += \
