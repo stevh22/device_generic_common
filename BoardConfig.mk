@@ -74,7 +74,7 @@ TARGET_HARDWARE_3D := true
 BOARD_EGL_CFG ?= device/generic/common/gpu/egl_mesa.cfg
 endif
 
-BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.hardware=$(PRODUCT_RELEASE_NAME) debug.autosleep=1
+BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.hardware=$(PRODUCT_RELEASE_NAME) sleep.earlysuspend=0
 
 # Optimizations
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
