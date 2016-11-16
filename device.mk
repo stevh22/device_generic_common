@@ -14,6 +14,13 @@
 # limitations under the License.
 #
 
+#OpenGAPPS
+GAPPS_VARIANT := pico
+PRODUCT_PACKAGES += PrebuiltGmail \
+    CalendarGooglePrebuilt \
+    PrebuiltExchange3Google \
+    GoogleContacts
+
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -107,3 +114,9 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
+
+# Inherit some common Bliss stuff.
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+
+#OpenGAPPS
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
