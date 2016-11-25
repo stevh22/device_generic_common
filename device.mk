@@ -19,14 +19,14 @@ GAPPS_VARIANT := pico
 PRODUCT_PACKAGES += PrebuiltGmail \
     CalendarGooglePrebuilt \
     PrebuiltExchange3Google \
-    GoogleContacts
-    Hotword
-    GoogleTTS
-    Search
-    Speech
-    Talkback
-    WebViewGoogle
-    YouTube
+    GoogleContacts \
+    Hotword \
+    GoogleTTS \
+    Search \
+    Speech \
+    Talkback \
+    WebViewGoogle \
+    YouTube \
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
@@ -34,7 +34,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10 \
     keyguard.no_require_sim=true \
-    ro.com.android.dataroaming=true
+    ro.com.android.dataroaming=true \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
