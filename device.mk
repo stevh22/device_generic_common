@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     Speech
     Talkback
     WebViewGoogle
+    YouTube
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
