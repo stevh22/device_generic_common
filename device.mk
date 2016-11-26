@@ -15,7 +15,7 @@
 #
 
 #OpenGAPPS
-GAPPS_VARIANT := pico
+GAPPS_VARIANT := stock
 PRODUCT_PACKAGES += PrebuiltGmail \
     CalendarGooglePrebuilt \
     PrebuiltExchange3Google \
