@@ -15,7 +15,7 @@
 #
 
 #OpenGAPPS
-GAPPS_VARIANT := stock
+GAPPS_VARIANT := pico
 PRODUCT_PACKAGES += PrebuiltGmail \
     CalendarGooglePrebuilt \
     PrebuiltExchange3Google \
@@ -27,6 +27,12 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     Talkback \
     WebViewGoogle \
     YouTube \
+    GCS \
+    DMAgent \
+    PixelIcons \
+    PixelLauncher \
+    Wallpapers \
+
 
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
