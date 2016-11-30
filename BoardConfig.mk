@@ -90,7 +90,7 @@ ZIP_OPTIMIZATION_NO_INTEGRITY := true
 ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m
 
 # Add needed cm tag for Bluez-x86
-INSTALL_PREFIX ?= cm-x86-14.0
+#INSTALL_PREFIX ?= cm-x86-14.0
 
 # Blissful Building Options
 #BLISS_AUDIO_MOD := viper
