@@ -60,6 +60,7 @@ USE_INTEL_OMX_COMPONENTS := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS ?= 3
 BOARD_USES_DRM_HWCOMPOSER ?= true
+BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
 USE_CAMERA_STUB ?= false
 
@@ -89,7 +90,7 @@ ZIP_OPTIMIZATION_NO_INTEGRITY := true
 ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m
 
 # Add needed cm tag for Bluez-x86
-CM_VERSION := 14.0
+INSTALL_PREFIX ?= cm-x86-14.0
 
 # Blissful Building Options
 #BLISS_AUDIO_MOD := viper
