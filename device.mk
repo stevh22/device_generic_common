@@ -19,7 +19,23 @@ GAPPS_VARIANT := pico
 PRODUCT_PACKAGES += PrebuiltGmail \
     CalendarGooglePrebuilt \
     PrebuiltExchange3Google \
-    GoogleContacts
+    GoogleContacts \
+    Hotword \
+    GoogleTTS \
+    Search \
+    Speech \
+    Talkback \
+    WebViewGoogle \
+    YouTube \
+    GCS \
+    DMAgent \
+    PixelIcons \
+    PixelLauncher \
+    Wallpapers \
+
+
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
