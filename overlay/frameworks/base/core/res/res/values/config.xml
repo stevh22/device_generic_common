@@ -70,8 +70,12 @@
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
+    <!-- Support in Surfaceflinger for blur layers.
+         NOTE: This requires additional hardware-specific code. -->
+    <bool name="config_uiBlurEnabled">true</bool>
+
     <!-- Flag indicating that this device does not rotate and will always remain in its default
          orientation. Activities that desire to run in a non-compatible orientation will be run
          from an emulated display within the physical display. -->
-    <bool name="config_forceDefaultOrientation">true</bool>
+    <bool name="config_forceDefaultOrientation">false</bool>
 </resources>
