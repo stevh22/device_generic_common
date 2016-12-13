@@ -25,13 +25,8 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     Search \
     Speech \
     Talkback \
-    WebViewGoogle \
-    YouTube \
-    GCS \
-    DMAgent \
     PixelIcons \
     PixelLauncher \
-    Wallpapers \
 
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
