@@ -84,6 +84,7 @@ TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
 PRC_COMPATIBILITY_PACKAGE := true
 ZIP_OPTIMIZATION_NO_INTEGRITY := true
+INSTALL_PREFIX ?= cm-x86-$(VER)
 
 # Add fix for common JACK issues
 ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m
