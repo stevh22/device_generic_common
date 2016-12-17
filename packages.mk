@@ -55,6 +55,8 @@ PRODUCT_PACKAGES := \
     ssh \
     sshd \
     su \
+    Terminal \
+    busybox \
     tablet-mode \
     v86d \
     wacom-input \
