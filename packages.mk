@@ -60,6 +60,7 @@ PRODUCT_PACKAGES := \
     tablet-mode \
     v86d \
     wacom-input \
+    SuperSU \
 
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -89,5 +90,4 @@ PRODUCT_PACKAGES += \
 
 # Third party apps
 PRODUCT_PACKAGES += \
-    CMFileManager \
     Eleven \

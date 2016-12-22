@@ -124,3 +124,6 @@ $(call inherit-product, vendor/bliss/config/common.mk)
 
 #OpenGAPPS
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
+
+# Get SuperSU
+$(call inherit-product-if-exists, vendor/supersu/vendor.mk)
