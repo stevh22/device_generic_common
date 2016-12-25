@@ -38,7 +38,6 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     PixelIcons \
     PixelLauncher \
     Wallpapers \
-    GoogleVrCore \
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
