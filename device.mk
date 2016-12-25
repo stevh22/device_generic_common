@@ -26,9 +26,7 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     Drive \
     CalculatorGoogle \
     PrebuiltDeskClockGoogle \
-    PlusOne \
     Chrome \
-    Hangouts \
     Maps \
     Photos \
     Search \
