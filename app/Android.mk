@@ -23,6 +23,7 @@ LOCAL_MODULE_SUFFIX := $$(suffix $(1))
 LOCAL_BUILT_MODULE_STEM := package.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := $(1)
+LOCAL_PRIVILEGED_MODULE := true
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_TARGET_ARCH := $$(call get-prebuilt-src-arch,$$(notdir $$(patsubst %/,%,$$(dir $$(LOCAL_LIBS)))))
 LOCAL_PREBUILT_JNI_LIBS := $$(addprefix @,$$(filter lib/$$(LOCAL_MODULE_TARGET_ARCH)/%,$$(LOCAL_LIBS)))
