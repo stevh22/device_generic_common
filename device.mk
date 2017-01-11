@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     GoogleContacts \
     Hotword \
     GoogleTTS \
+    LatinImeGoogle \
     PrebuiltGmail \
     Drive \
     CalculatorGoogle \
@@ -31,13 +32,14 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     Photos \
     Search \
     Speech \
-    Talkback \
+    talkback \
     YouTube \
     GCS \
     DMAgent \
     PixelIcons \
     PixelLauncher \
     Wallpapers \
+    PixelLauncherIcons
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
