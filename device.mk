@@ -102,8 +102,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f))) \
-    $(LOCAL_PATH)/subs/system/bin/aopt:system/bin/aopt 
-
+    $(LOCAL_PATH)/subs/system/bin/aopt:system/bin/aopt \
+    $(LOCAL_PATH)/subs/system/bin/houdini.sfs:system/bin/houdini.sfs \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
