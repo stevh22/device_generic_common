@@ -10,7 +10,7 @@ BOARD_HAVE_BLUETOOTH_LINUX := true
 
 BOARD_USE_LEGACY_UI := true
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE = $(if $(MKSQUASHFS),0,2147483648)
+BOARD_SYSTEMIMAGE_PARTITION_SIZE = $(if $(MKSQUASHFS),0,2247483648)
 
 # customize the malloced address to be 16-byte aligned
 BOARD_MALLOC_ALIGNMENT := 16
@@ -78,7 +78,7 @@ TARGET_HARDWARE_3D := true
 BOARD_EGL_CFG ?= device/generic/common/gpu/egl_mesa.cfg
 endif
 
-BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive sleep.earlysuspend=0 
+BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive
 TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
 
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
@@ -99,17 +99,17 @@ BLISS_STRICT := false
 FLOOP_NEST_OPTIMIZE := true
 #ENABLE_GCCONLY := true
 BLISS_PIPE := true
-#TARGET_ENABLE_UKM := true
-#BLISS_PTHREAD := true
+TARGET_ENABLE_UKM := true
+BLISS_PTHREAD := true
 BLISS_GOMP := true
 BLISS_EXTRAGCC := true
 #BLISS_SANITIZE := true
 #TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 FAST_MATH := true
-#ENABLE_MODULAR_O3 := true
-#ENABLE_LTO := true
+ENABLE_MODULAR_O3 := true
+ENABLE_LTO := true
 LINK_TIME_OPTIMIZATIONS := true
-#TARGET_USE_ION_COMPAT := true
+TARGET_USE_ION_COMPAT := true
 #TARGET_USE_KRAIT_PLD_SET := true
 #WITH_LZMA_OTA := true
 TARGET_TC_ROM := 4.9
