@@ -72,7 +72,7 @@
 
     <!-- Support in Surfaceflinger for blur layers.
          NOTE: This requires additional hardware-specific code. -->
-    <bool name="config_uiBlurEnabled">true</bool>
+    <!-- <bool name="config_uiBlurEnabled">true</bool> -->
 
     <!-- Flag indicating that this device does not rotate and will always remain in its default
          orientation. Activities that desire to run in a non-compatible orientation will be run
