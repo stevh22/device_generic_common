@@ -38,7 +38,6 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     GCS \
     DMAgent \
     PixelIcons \
-    PixelLauncher \
     Wallpapers \
     PixelLauncherIcons \
     GoogleExtServices \
