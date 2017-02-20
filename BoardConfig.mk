@@ -87,7 +87,7 @@ ZIP_OPTIMIZATION_NO_INTEGRITY := true
 INSTALL_PREFIX ?= cm-x86-$(VER)
 
 # Add needed cm tag for Bluez-x86
-CM_VERSION := 14.0
+CM_VERSION := 14.1
 
 # Blissful Building Options
 #BLISS_AUDIO_MOD := viper
