@@ -21,7 +21,10 @@ PRODUCT_PACKAGES += PrebuiltGmail \
     PrebuiltExchange3Google \
     GoogleContacts \
     Hotword \
+    HotwordEnrollment \
+    Velvet \
     GoogleTTS \
+    GooglePackageInstaller \
     LatinImeGoogle \
     PrebuiltGmail \
     Drive \
