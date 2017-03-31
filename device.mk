@@ -61,7 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.arch=x86 \
-    # persist.rtc_local_time=1 \
+    persist.rtc_local_time=1 \
 
 PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)init.rc),$(PRODUCT_DIR)init.rc:root/init.rc) \
