@@ -1,2 +1,5 @@
 # system.prop for lollipop-x86
 #poweroff.doubleclick=1
+
+# soft keys only needed for Taskbar as navigation bar
+#qemu.hw.mainkeys=0
