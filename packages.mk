@@ -61,6 +61,10 @@ PRODUCT_PACKAGES := \
     v86d \
     wacom-input \
     SuperSU \
+    Bluetooth \
+    Tag \
+    NfcNci \
+    sl4n
 
 PRODUCT_PACKAGES += \
     libwpa_client \
