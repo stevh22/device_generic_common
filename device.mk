@@ -16,36 +16,11 @@
 
 #OpenGAPPS
 GAPPS_VARIANT := pico
-PRODUCT_PACKAGES += PrebuiltGmail \
-    CalendarGooglePrebuilt \
-    PrebuiltExchange3Google \
-    GoogleContacts \
-    Hotword \
-    HotwordEnrollment \
-    Velvet \
-    GoogleTTS \
-    GooglePackageInstaller \
-    LatinImeGoogle \
-    PrebuiltGmail \
-    Drive \
-    CalculatorGoogle \
-    PrebuiltDeskClockGoogle \
-    Chrome \
-    Maps \
-    Photos \
-    Search \
-    Speech \
-    Tycho \
-    talkback \
-    YouTube \
-    GCS \
-    DMAgent \
+PRODUCT_PACKAGES += Chrome \
     PixelIcons \
     PixelLauncher \
     Wallpapers \
     PixelLauncherIcons \
-    GoogleExtServices \
-    GoogleExtShared
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
@@ -56,7 +31,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.com.android.dataroaming=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
     persist.sys.nativebridge=1 \
 	
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
