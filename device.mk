@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += Chrome \
     HotwordEnrollment \
     Velvet \
     GoogleTTS \
+    TagGoogle \
     GooglePackageInstaller \
     LatinImeGoogle \
     PrebuiltDeskClockGoogle \
