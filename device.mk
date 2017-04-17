@@ -17,10 +17,29 @@
 #OpenGAPPS
 GAPPS_VARIANT := pico
 PRODUCT_PACKAGES += Chrome \
+    CalendarGooglePrebuilt \
+    PrebuiltExchange3Google \
+    Hotword \
+    HotwordEnrollment \
+    Velvet \
+    GoogleTTS \
+    GooglePackageInstaller \
+    LatinImeGoogle \
+    PrebuiltDeskClockGoogle \
+    Photos \
+    Search \
+    Speech \
+    Tycho \
+    talkback \
+    YouTube \
+    GCS \
+    DMAgent \
     PixelIcons \
     PixelLauncher \
     Wallpapers \
     PixelLauncherIcons \
+    GoogleExtServices \
+    GoogleExtShared
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
