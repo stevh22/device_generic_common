@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += Chrome \
     GoogleExtServices \
     GoogleExtShared
     
-GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
