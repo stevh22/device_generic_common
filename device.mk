@@ -28,6 +28,8 @@ PRODUCT_PACKAGES += Chrome \
        
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
+GAPPS_EXCLUDED_PACKAGES := FaceLock
+
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
 PRODUCT_PROPERTY_OVERRIDES := \
