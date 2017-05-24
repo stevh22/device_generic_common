@@ -98,8 +98,6 @@ PRODUCT_COPY_FILES += \
     
 # Widevine DRM blobs
 PRODUCT_COPY_FILES += \
-    device/generic/common/widevine/proprietary/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
-    device/generic/common/widevine/proprietary/com.google.widevine.software.drm.jar:system/framework/com.google.widevine.software.drm.jar \
     device/generic/common/widevine/proprietary/libdrmframework.so:system/lib/arm/libdrmframework.so \
     device/generic/common/widevine/proprietary/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     device/generic/common/widevine/proprietary/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
