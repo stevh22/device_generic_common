@@ -15,33 +15,17 @@
 #
 
 #OpenGAPPS
-GAPPS_VARIANT := pico
+GAPPS_VARIANT := micro
 PRODUCT_PACKAGES += Chrome \
-    CalendarGooglePrebuilt \
-    PrebuiltExchange3Google \
-    Hotword \
-    HotwordEnrollment \
-    Velvet \
+	KeyboardGoogle \
+	Hangouts \
     GoogleTTS \
-    TagGoogle \
-    GooglePackageInstaller \
-    LatinImeGoogle \
-    PrebuiltDeskClockGoogle \
-    Photos \
-    Search \
-    Speech \
-    Tycho \
-    talkback \
     YouTube \
-    GCS \
-    DMAgent \
     PixelIcons \
     PixelLauncher \
     Wallpapers \
     PixelLauncherIcons \
-    GoogleExtServices \
-    GoogleExtShared
-    
+       
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
