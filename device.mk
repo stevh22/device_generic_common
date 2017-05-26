@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += Chrome \
     PixelLauncher \
     Wallpapers \
     PixelLauncherIcons \
+    WebViewGoogle 
        
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
