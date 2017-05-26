@@ -18,6 +18,7 @@
 GAPPS_VARIANT := micro
 PRODUCT_PACKAGES += Chrome \
 	KeyboardGoogle \
+	LatinImeGoogle \
 	Hangouts \
     GoogleTTS \
     YouTube \
