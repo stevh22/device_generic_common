@@ -1,0 +1,5 @@
+[gerrit]
+host=review-x86.blissroms.com
+port=29420
+project=device_generic_common.git
+defaultbranch=n7.1-x86
