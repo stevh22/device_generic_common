@@ -1,8 +1,8 @@
-state.bytcrrt5640 {
+state.chtrt5645 {
 	control.1 {
 		iface MIXER
 		name 'media0_out mix 0 media0_in Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -32,7 +32,7 @@ state.bytcrrt5640 {
 	control.4 {
 		iface MIXER
 		name 'media0_out mix 0 media3_in Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -152,7 +152,7 @@ state.bytcrrt5640 {
 	control.16 {
 		iface MIXER
 		name 'pcm1_out mix 0 codec_in0 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -192,7 +192,7 @@ state.bytcrrt5640 {
 	control.20 {
 		iface MIXER
 		name 'pcm1_out mix 0 media_loop2_in Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -432,7 +432,7 @@ state.bytcrrt5640 {
 	control.44 {
 		iface MIXER
 		name 'media_loop2_out mix 0 codec_in0 Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -552,7 +552,7 @@ state.bytcrrt5640 {
 	control.56 {
 		iface MIXER
 		name 'codec_out0 mix 0 pcm0_in Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -622,7 +622,7 @@ state.bytcrrt5640 {
 	control.63 {
 		iface MIXER
 		name 'codec_out1 mix 0 pcm0_in Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -653,7 +653,7 @@ state.bytcrrt5640 {
 	control.66 {
 		iface MIXER
 		name 'media0_in Gain 0 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -663,8 +663,8 @@ state.bytcrrt5640 {
 	control.67 {
 		iface MIXER
 		name 'media0_in Gain 0 Volume'
-		value.0 0
-		value.1 0
+		value.0 -1440
+		value.1 -1440
 		comment {
 			access 'read write'
 			type INTEGER
@@ -672,14 +672,14 @@ state.bytcrrt5640 {
 			range '-1440 - 360'
 			dbmin -14400
 			dbmax 3600
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 -14400
+			dbvalue.1 -14400
 		}
 	}
 	control.68 {
 		iface MIXER
 		name 'media1_in Gain 0 Ramp Delay'
-		value 5
+		value 50
 		comment {
 			access 'read write'
 			type INTEGER
@@ -764,7 +764,7 @@ state.bytcrrt5640 {
 	control.75 {
 		iface MIXER
 		name 'media3_in Gain 0 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -774,8 +774,8 @@ state.bytcrrt5640 {
 	control.76 {
 		iface MIXER
 		name 'media3_in Gain 0 Volume'
-		value.0 0
-		value.1 0
+		value.0 -1440
+		value.1 -1440
 		comment {
 			access 'read write'
 			type INTEGER
@@ -783,14 +783,14 @@ state.bytcrrt5640 {
 			range '-1440 - 360'
 			dbmin -14400
 			dbmax 3600
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 -14400
+			dbvalue.1 -14400
 		}
 	}
 	control.77 {
 		iface MIXER
 		name 'pcm0_in Gain 0 Ramp Delay'
-		value 105
+		value 50
 		comment {
 			access 'read write'
 			type INTEGER
@@ -864,7 +864,7 @@ state.bytcrrt5640 {
 	control.83 {
 		iface MIXER
 		name 'pcm1_out Gain 0 Ramp Delay'
-		value 5
+		value 50
 		comment {
 			access 'read write'
 			type INTEGER
@@ -938,7 +938,7 @@ state.bytcrrt5640 {
 	control.89 {
 		iface MIXER
 		name 'codec_in0 Gain 0 Ramp Delay'
-		value 5
+		value 50
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1023,7 +1023,7 @@ state.bytcrrt5640 {
 	control.96 {
 		iface MIXER
 		name 'codec_out0 Gain 0 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1033,43 +1033,6 @@ state.bytcrrt5640 {
 	control.97 {
 		iface MIXER
 		name 'codec_out0 Gain 0 Volume'
-		value.0 0
-		value.1 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '-1440 - 360'
-			dbmin -14400
-			dbmax 3600
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.98 {
-		iface MIXER
-		name 'codec_out1 Gain 0 Ramp Delay'
-		value 5
-		comment {
-			access 'read write'
-			type INTEGER
-			count 1
-			range '5 - 5000'
-		}
-	}
-	control.99 {
-		iface MIXER
-		name 'codec_out1 Gain 0 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.100 {
-		iface MIXER
-		name 'codec_out1 Gain 0 Volume'
 		value.0 -1440
 		value.1 -1440
 		comment {
@@ -1081,6 +1044,43 @@ state.bytcrrt5640 {
 			dbmax 3600
 			dbvalue.0 -14400
 			dbvalue.1 -14400
+		}
+	}
+	control.98 {
+		iface MIXER
+		name 'codec_out1 Gain 0 Ramp Delay'
+		value 50
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '5 - 5000'
+		}
+	}
+	control.99 {
+		iface MIXER
+		name 'codec_out1 Gain 0 Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.100 {
+		iface MIXER
+		name 'codec_out1 Gain 0 Volume'
+		value.0 -180
+		value.1 -180
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '-1440 - 360'
+			dbmin -14400
+			dbmax 3600
+			dbvalue.0 -1800
+			dbvalue.1 -1800
 		}
 	}
 	control.101 {
@@ -1123,7 +1123,7 @@ state.bytcrrt5640 {
 	control.104 {
 		iface MIXER
 		name 'media_loop2_out Gain 0 Ramp Delay'
-		value 5
+		value 50
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1134,7 +1134,7 @@ state.bytcrrt5640 {
 	control.105 {
 		iface MIXER
 		name 'media_loop2_out Gain 0 Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1144,8 +1144,8 @@ state.bytcrrt5640 {
 	control.106 {
 		iface MIXER
 		name 'media_loop2_out Gain 0 Volume'
-		value.0 -1440
-		value.1 -1440
+		value.0 0
+		value.1 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1153,8 +1153,8 @@ state.bytcrrt5640 {
 			range '-1440 - 360'
 			dbmin -14400
 			dbmax 3600
-			dbvalue.0 -14400
-			dbvalue.1 -14400
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.107 {
@@ -1443,32 +1443,6 @@ state.bytcrrt5640 {
 	}
 	control.130 {
 		iface MIXER
-		name 'Mono Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.131 {
-		iface MIXER
-		name 'Mono DAC Playback Volume'
-		value.0 0
-		value.1 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 175'
-			dbmin -65625
-			dbmax 0
-			dbvalue.0 -65625
-			dbvalue.1 -65625
-		}
-	}
-	control.132 {
-		iface MIXER
 		name 'Speaker Channel Switch'
 		value.0 true
 		value.1 true
@@ -1478,11 +1452,11 @@ state.bytcrrt5640 {
 			count 2
 		}
 	}
-	control.133 {
+	control.131 {
 		iface MIXER
 		name 'Speaker Playback Volume'
-		value.0 29
-		value.1 29
+		value.0 39
+		value.1 39
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1490,26 +1464,40 @@ state.bytcrrt5640 {
 			range '0 - 39'
 			dbmin -4650
 			dbmax 1200
-			dbvalue.0 -300
-			dbvalue.1 -300
+			dbvalue.0 1200
+			dbvalue.1 1200
 		}
 	}
-	control.134 {
+	control.132 {
 		iface MIXER
-		name 'HP Channel Switch'
-		value.0 true
-		value.1 true
+		name 'Speaker ClassD Playback Volume'
+		value 4
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+			dbmin -600
+			dbmax 228
+			dbvalue.0 0
+		}
+	}
+	control.133 {
+		iface MIXER
+		name 'Headphone Channel Switch'
+		value.0 false
+		value.1 false
 		comment {
 			access 'read write'
 			type BOOLEAN
 			count 2
 		}
 	}
-	control.135 {
+	control.134 {
 		iface MIXER
-		name 'HP Playback Volume'
-		value.0 0
-		value.1 0
+		name 'Headphone Playback Volume'
+		value.0 17
+		value.1 17
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1517,11 +1505,11 @@ state.bytcrrt5640 {
 			range '0 - 39'
 			dbmin -4650
 			dbmax 1200
-			dbvalue.0 -4650
-			dbvalue.1 -4650
+			dbvalue.0 -2100
+			dbvalue.1 -2100
 		}
 	}
-	control.136 {
+	control.135 {
 		iface MIXER
 		name 'OUT Playback Switch'
 		value.0 false
@@ -1532,7 +1520,7 @@ state.bytcrrt5640 {
 			count 2
 		}
 	}
-	control.137 {
+	control.136 {
 		iface MIXER
 		name 'OUT Channel Switch'
 		value.0 false
@@ -1543,11 +1531,11 @@ state.bytcrrt5640 {
 			count 2
 		}
 	}
-	control.138 {
+	control.137 {
 		iface MIXER
 		name 'OUT Playback Volume'
-		value.0 25
-		value.1 25
+		value.0 31
+		value.1 31
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1555,68 +1543,70 @@ state.bytcrrt5640 {
 			range '0 - 39'
 			dbmin -4650
 			dbmax 1200
-			dbvalue.0 -900
-			dbvalue.1 -900
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
-	control.139 {
+	control.138 {
 		iface MIXER
 		name 'DAC2 Playback Switch'
-		value.0 false
-		value.1 false
+		value.0 true
+		value.1 true
 		comment {
 			access 'read write'
 			type BOOLEAN
 			count 2
 		}
 	}
-	control.140 {
+	control.139 {
 		iface MIXER
 		name 'DAC1 Playback Volume'
-		value.0 174
-		value.1 174
+		value.0 87
+		value.1 87
 		comment {
 			access 'read write'
 			type INTEGER
 			count 2
-			range '0 - 175'
-			dbmin -65625
+			range '0 - 87'
+			dbmin -6525
 			dbmax 0
-			dbvalue.0 -375
-			dbvalue.1 -375
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.140 {
+		iface MIXER
+		name 'Mono DAC Playback Volume'
+		value.0 87
+		value.1 87
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 87'
+			dbmin -6525
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.141 {
 		iface MIXER
 		name 'IN1 Boost'
-		value 1
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
 			count 1
-			range '0 - 8'
+			range '0 - 12'
 			dbmin 0
 			dbmax 5200
-			dbvalue.0 2000
+			dbvalue.0 0
 		}
 	}
 	control.142 {
 		iface MIXER
 		name 'IN2 Boost'
-		value 1
-		comment {
-			access 'read write'
-			type INTEGER
-			count 1
-			range '0 - 8'
-			dbmin 0
-			dbmax 5200
-			dbvalue.0 2000
-		}
-	}
-	control.143 {
-		iface MIXER
-		name 'IN3 Boost'
 		value 0
 		comment {
 			access 'read write'
@@ -1628,11 +1618,11 @@ state.bytcrrt5640 {
 			dbvalue.0 0
 		}
 	}
-	control.144 {
+	control.143 {
 		iface MIXER
 		name 'IN Capture Volume'
-		value.0 23
-		value.1 23
+		value.0 31
+		value.1 31
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1640,11 +1630,11 @@ state.bytcrrt5640 {
 			range '0 - 31'
 			dbmin -3450
 			dbmax 1200
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 1200
+			dbvalue.1 1200
 		}
 	}
-	control.145 {
+	control.144 {
 		iface MIXER
 		name 'ADC Capture Switch'
 		value.0 true
@@ -1655,43 +1645,54 @@ state.bytcrrt5640 {
 			count 2
 		}
 	}
-	control.146 {
+	control.145 {
 		iface MIXER
 		name 'ADC Capture Volume'
-		value.0 47
-		value.1 47
+		value.0 31
+		value.1 31
 		comment {
 			access 'read write'
 			type INTEGER
 			count 2
-			range '0 - 127'
-			dbmin -17625
-			dbmax 30000
-			dbvalue.0 0
-			dbvalue.1 0
+			range '0 - 63'
+			dbmin -1725
+			dbmax 3000
+			dbvalue.0 600
+			dbvalue.1 600
+		}
+	}
+	control.146 {
+		iface MIXER
+		name 'Mono ADC Capture Switch'
+		value.0 true
+		value.1 true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
 		}
 	}
 	control.147 {
 		iface MIXER
 		name 'Mono ADC Capture Volume'
-		value.0 47
-		value.1 47
+		value.0 63
+		value.1 63
 		comment {
 			access 'read write'
 			type INTEGER
 			count 2
-			range '0 - 127'
-			dbmin -17625
-			dbmax 30000
-			dbvalue.0 0
-			dbvalue.1 0
+			range '0 - 63'
+			dbmin -1725
+			dbmax 3000
+			dbvalue.0 3000
+			dbvalue.1 3000
 		}
 	}
 	control.148 {
 		iface MIXER
-		name 'ADC Boost Gain'
-		value.0 0
-		value.1 0
+		name 'ADC Boost Capture Volume'
+		value.0 3
+		value.1 3
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1699,91 +1700,70 @@ state.bytcrrt5640 {
 			range '0 - 3'
 			dbmin 0
 			dbmax 3600
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 3600
+			dbvalue.1 3600
 		}
 	}
 	control.149 {
 		iface MIXER
-		name 'Class D SPK Ratio Control'
-		value '2.77x'
+		name 'Mono ADC Boost Capture Volume'
+		value.0 2
+		value.1 2
 		comment {
 			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 '1.66x'
-			item.1 '1.83x'
-			item.2 '1.94x'
-			item.3 '2x'
-			item.4 '2.11x'
-			item.5 '2.22x'
-			item.6 '2.33x'
-			item.7 '2.44x'
-			item.8 '2.55x'
-			item.9 '2.66x'
-			item.10 '2.77x'
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3600
+			dbvalue.0 2400
+			dbvalue.1 2400
 		}
 	}
 	control.150 {
 		iface MIXER
-		name 'ADC IF1 Data Switch'
-		value Normal
+		name 'I2S2 Func Switch'
+		value true
 		comment {
 			access 'read write'
-			type ENUMERATED
+			type BOOLEAN
 			count 1
-			item.0 Normal
-			item.1 'left copy to right'
-			item.2 'right copy to left'
-			item.3 Swap
 		}
 	}
 	control.151 {
 		iface MIXER
-		name 'DAC IF1 Data Switch'
-		value Normal
+		name 'Speaker HWEQ'
+		value '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
 		comment {
 			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 Normal
-			item.1 'left copy to right'
-			item.2 'right copy to left'
-			item.3 Swap
+			type BYTES
+			count 228
 		}
 	}
 	control.152 {
-		iface MIXER
-		name 'ADC IF2 Data Switch'
-		value Normal
+		iface CARD
+		name 'Headphone Jack'
+		value true
 		comment {
-			access 'read write'
-			type ENUMERATED
+			access read
+			type BOOLEAN
 			count 1
-			item.0 Normal
-			item.1 'left copy to right'
-			item.2 'right copy to left'
-			item.3 Swap
 		}
 	}
 	control.153 {
-		iface MIXER
-		name 'DAC IF2 Data Switch'
-		value Normal
+		iface CARD
+		name 'Headset Mic Jack'
+		value true
 		comment {
-			access 'read write'
-			type ENUMERATED
+			access read
+			type BOOLEAN
 			count 1
-			item.0 Normal
-			item.1 'left copy to right'
-			item.2 'right copy to left'
-			item.3 Swap
 		}
 	}
 	control.154 {
 		iface MIXER
 		name 'Headphone Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1802,8 +1782,8 @@ state.bytcrrt5640 {
 	}
 	control.156 {
 		iface MIXER
-		name 'Internal Mic Switch'
-		value false
+		name 'Int Mic Switch'
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1812,7 +1792,7 @@ state.bytcrrt5640 {
 	}
 	control.157 {
 		iface MIXER
-		name 'Speaker Switch'
+		name 'Ext Spk Switch'
 		value true
 		comment {
 			access 'read write'
@@ -1842,7 +1822,7 @@ state.bytcrrt5640 {
 	}
 	control.160 {
 		iface MIXER
-		name 'RECMIXL BST3 Switch'
+		name 'RECMIXL BST2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -1852,8 +1832,8 @@ state.bytcrrt5640 {
 	}
 	control.161 {
 		iface MIXER
-		name 'RECMIXL BST2 Switch'
-		value true
+		name 'RECMIXL BST1 Switch'
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1862,8 +1842,8 @@ state.bytcrrt5640 {
 	}
 	control.162 {
 		iface MIXER
-		name 'RECMIXL BST1 Switch'
-		value true
+		name 'RECMIXL OUT MIXL Switch'
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1872,7 +1852,7 @@ state.bytcrrt5640 {
 	}
 	control.163 {
 		iface MIXER
-		name 'RECMIXL OUT MIXL Switch'
+		name 'RECMIXR HPOR Switch'
 		value false
 		comment {
 			access 'read write'
@@ -1882,7 +1862,7 @@ state.bytcrrt5640 {
 	}
 	control.164 {
 		iface MIXER
-		name 'RECMIXR HPOR Switch'
+		name 'RECMIXR INR Switch'
 		value false
 		comment {
 			access 'read write'
@@ -1892,7 +1872,7 @@ state.bytcrrt5640 {
 	}
 	control.165 {
 		iface MIXER
-		name 'RECMIXR INR Switch'
+		name 'RECMIXR BST2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -1902,7 +1882,7 @@ state.bytcrrt5640 {
 	}
 	control.166 {
 		iface MIXER
-		name 'RECMIXR BST3 Switch'
+		name 'RECMIXR BST1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -1912,26 +1892,6 @@ state.bytcrrt5640 {
 	}
 	control.167 {
 		iface MIXER
-		name 'RECMIXR BST2 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.168 {
-		iface MIXER
-		name 'RECMIXR BST1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.169 {
-		iface MIXER
 		name 'RECMIXR OUT MIXR Switch'
 		value false
 		comment {
@@ -1940,9 +1900,9 @@ state.bytcrrt5640 {
 			count 1
 		}
 	}
-	control.170 {
+	control.168 {
 		iface MIXER
-		name 'Stereo ADC2 Mux'
+		name 'Stereo1 DMIC Mux'
 		value DMIC1
 		comment {
 			access 'read write'
@@ -1950,85 +1910,108 @@ state.bytcrrt5640 {
 			count 1
 			item.0 DMIC1
 			item.1 DMIC2
-			item.2 'DIG MIX'
 		}
 	}
-	control.171 {
+	control.169 {
 		iface MIXER
-		name 'Stereo ADC1 Mux'
+		name 'Stereo1 ADC2 Mux'
+		value 'DAC MIX'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'DAC MIX'
+			item.1 DMIC
+		}
+	}
+	control.170 {
+		iface MIXER
+		name 'Stereo1 ADC1 Mux'
 		value ADC
 		comment {
 			access 'read write'
 			type ENUMERATED
 			count 1
-			item.0 'DIG MIX'
+			item.0 'DAC MIX'
 			item.1 ADC
 		}
 	}
-	control.172 {
+	control.171 {
 		iface MIXER
-		name 'Mono ADC L2 Mux'
-		value 'DMIC L1'
+		name 'Mono DMIC L Mux'
+		value DMIC1
 		comment {
 			access 'read write'
 			type ENUMERATED
 			count 1
-			item.0 'DMIC L1'
-			item.1 'DMIC L2'
-			item.2 'Mono DAC MIXL'
+			item.0 DMIC1
+			item.1 DMIC2
+		}
+	}
+	control.172 {
+		iface MIXER
+		name 'Mono DMIC R Mux'
+		value DMIC1
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 DMIC1
+			item.1 DMIC2
 		}
 	}
 	control.173 {
 		iface MIXER
-		name 'Mono ADC L1 Mux'
-		value ADCL
+		name 'Mono ADC L2 Mux'
+		value 'Mono DAC MIXL'
 		comment {
 			access 'read write'
 			type ENUMERATED
 			count 1
 			item.0 'Mono DAC MIXL'
-			item.1 ADCL
+			item.1 DMIC
 		}
 	}
 	control.174 {
 		iface MIXER
+		name 'Mono ADC L1 Mux'
+		value ADC
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Mono DAC MIXL'
+			item.1 ADC
+		}
+	}
+	control.175 {
+		iface MIXER
 		name 'Mono ADC R1 Mux'
-		value ADCR
+		value ADC
 		comment {
 			access 'read write'
 			type ENUMERATED
 			count 1
 			item.0 'Mono DAC MIXR'
-			item.1 ADCR
-		}
-	}
-	control.175 {
-		iface MIXER
-		name 'Mono ADC R2 Mux'
-		value 'DMIC R1'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'DMIC R1'
-			item.1 'DMIC R2'
-			item.2 'Mono DAC MIXR'
+			item.1 ADC
 		}
 	}
 	control.176 {
 		iface MIXER
-		name 'Stereo ADC MIXL ADC1 Switch'
-		value true
+		name 'Mono ADC R2 Mux'
+		value 'Mono DAC MIXR'
 		comment {
 			access 'read write'
-			type BOOLEAN
+			type ENUMERATED
 			count 1
+			item.0 'Mono DAC MIXR'
+			item.1 DMIC
 		}
 	}
 	control.177 {
 		iface MIXER
-		name 'Stereo ADC MIXL ADC2 Switch'
-		value true
+		name 'Sto1 ADC MIXL ADC1 Switch'
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2037,7 +2020,7 @@ state.bytcrrt5640 {
 	}
 	control.178 {
 		iface MIXER
-		name 'Stereo ADC MIXR ADC1 Switch'
+		name 'Sto1 ADC MIXL ADC2 Switch'
 		value true
 		comment {
 			access 'read write'
@@ -2047,8 +2030,8 @@ state.bytcrrt5640 {
 	}
 	control.179 {
 		iface MIXER
-		name 'Stereo ADC MIXR ADC2 Switch'
-		value true
+		name 'Sto1 ADC MIXR ADC1 Switch'
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2057,8 +2040,8 @@ state.bytcrrt5640 {
 	}
 	control.180 {
 		iface MIXER
-		name 'Mono ADC MIXL ADC1 Switch'
-		value false
+		name 'Sto1 ADC MIXR ADC2 Switch'
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2067,7 +2050,7 @@ state.bytcrrt5640 {
 	}
 	control.181 {
 		iface MIXER
-		name 'Mono ADC MIXL ADC2 Switch'
+		name 'Mono ADC MIXL ADC1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2077,7 +2060,7 @@ state.bytcrrt5640 {
 	}
 	control.182 {
 		iface MIXER
-		name 'Mono ADC MIXR ADC1 Switch'
+		name 'Mono ADC MIXL ADC2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2087,7 +2070,7 @@ state.bytcrrt5640 {
 	}
 	control.183 {
 		iface MIXER
-		name 'Mono ADC MIXR ADC2 Switch'
+		name 'Mono ADC MIXR ADC1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2097,33 +2080,7 @@ state.bytcrrt5640 {
 	}
 	control.184 {
 		iface MIXER
-		name 'DAI select'
-		value '1:1|2:2'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 '1:1|2:2'
-			item.1 '1:2|2:1'
-			item.2 '1:1|2:1'
-			item.3 '1:2|2:2'
-		}
-	}
-	control.185 {
-		iface MIXER
-		name 'SDI select'
-		value IF1
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 IF1
-			item.1 IF2
-		}
-	}
-	control.186 {
-		iface MIXER
-		name 'DAC MIXL Stereo ADC Switch'
+		name 'Mono ADC MIXR ADC2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2131,10 +2088,36 @@ state.bytcrrt5640 {
 			count 1
 		}
 	}
+	control.185 {
+		iface MIXER
+		name 'IF2 ADC Mux'
+		value IF_ADC2
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 IF_ADC1
+			item.1 IF_ADC2
+			item.2 VAD_ADC
+		}
+	}
+	control.186 {
+		iface MIXER
+		name 'VAD ADC Mux'
+		value 'Sto1 ADC L'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Sto1 ADC L'
+			item.1 'Mono ADC L'
+			item.2 'Mono ADC R'
+		}
+	}
 	control.187 {
 		iface MIXER
-		name 'DAC MIXL INF1 Switch'
-		value true
+		name 'DAC1 MIXL Stereo ADC Switch'
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2143,7 +2126,7 @@ state.bytcrrt5640 {
 	}
 	control.188 {
 		iface MIXER
-		name 'DAC MIXR Stereo ADC Switch'
+		name 'DAC1 MIXL DAC1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2153,8 +2136,8 @@ state.bytcrrt5640 {
 	}
 	control.189 {
 		iface MIXER
-		name 'DAC MIXR INF1 Switch'
-		value true
+		name 'DAC1 MIXR Stereo ADC Switch'
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2163,7 +2146,7 @@ state.bytcrrt5640 {
 	}
 	control.190 {
 		iface MIXER
-		name 'Mono DAC MIXL DAC L1 Switch'
+		name 'DAC1 MIXR DAC1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2173,47 +2156,63 @@ state.bytcrrt5640 {
 	}
 	control.191 {
 		iface MIXER
-		name 'Mono DAC MIXL DAC L2 Switch'
-		value false
+		name 'DAC L2 Mux'
+		value 'IF1 DAC'
 		comment {
 			access 'read write'
-			type BOOLEAN
+			type ENUMERATED
 			count 1
+			item.0 'IF1 DAC'
+			item.1 'IF2 DAC'
+			item.2 'IF3 DAC'
+			item.3 'Mono ADC'
+			item.4 VAD_ADC
 		}
 	}
 	control.192 {
 		iface MIXER
-		name 'Mono DAC MIXL DAC R2 Switch'
-		value false
+		name 'DAC R2 Mux'
+		value 'IF1 DAC'
 		comment {
 			access 'read write'
-			type BOOLEAN
+			type ENUMERATED
 			count 1
+			item.0 'IF1 DAC'
+			item.1 'IF2 DAC'
+			item.2 'IF3 DAC'
+			item.3 'Mono ADC'
+			item.4 Haptic
 		}
 	}
 	control.193 {
 		iface MIXER
-		name 'Mono DAC MIXR DAC R1 Switch'
-		value false
+		name 'DAC1 L Mux'
+		value 'IF1 DAC'
 		comment {
 			access 'read write'
-			type BOOLEAN
+			type ENUMERATED
 			count 1
+			item.0 'IF1 DAC'
+			item.1 'IF2 DAC'
+			item.2 'IF3 DAC'
 		}
 	}
 	control.194 {
 		iface MIXER
-		name 'Mono DAC MIXR DAC R2 Switch'
-		value false
+		name 'DAC1 R Mux'
+		value 'IF1 DAC'
 		comment {
 			access 'read write'
-			type BOOLEAN
+			type ENUMERATED
 			count 1
+			item.0 'IF1 DAC'
+			item.1 'IF2 DAC'
+			item.2 'IF3 DAC'
 		}
 	}
 	control.195 {
 		iface MIXER
-		name 'Mono DAC MIXR DAC L2 Switch'
+		name 'Stereo DAC MIXL DAC L1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2223,7 +2222,7 @@ state.bytcrrt5640 {
 	}
 	control.196 {
 		iface MIXER
-		name 'DIG MIXL DAC L1 Switch'
+		name 'Stereo DAC MIXL DAC L2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2233,7 +2232,7 @@ state.bytcrrt5640 {
 	}
 	control.197 {
 		iface MIXER
-		name 'DIG MIXL DAC L2 Switch'
+		name 'Stereo DAC MIXL DAC R1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2243,7 +2242,7 @@ state.bytcrrt5640 {
 	}
 	control.198 {
 		iface MIXER
-		name 'DIG MIXR DAC R1 Switch'
+		name 'Stereo DAC MIXR DAC R1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2253,7 +2252,7 @@ state.bytcrrt5640 {
 	}
 	control.199 {
 		iface MIXER
-		name 'DIG MIXR DAC R2 Switch'
+		name 'Stereo DAC MIXR DAC R2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2263,7 +2262,7 @@ state.bytcrrt5640 {
 	}
 	control.200 {
 		iface MIXER
-		name 'SPK MIXL REC MIXL Switch'
+		name 'Stereo DAC MIXR DAC L1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2273,7 +2272,7 @@ state.bytcrrt5640 {
 	}
 	control.201 {
 		iface MIXER
-		name 'SPK MIXL INL Switch'
+		name 'Mono DAC MIXL DAC L1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2283,7 +2282,7 @@ state.bytcrrt5640 {
 	}
 	control.202 {
 		iface MIXER
-		name 'SPK MIXL DAC L1 Switch'
+		name 'Mono DAC MIXL DAC L2 Switch'
 		value true
 		comment {
 			access 'read write'
@@ -2293,7 +2292,7 @@ state.bytcrrt5640 {
 	}
 	control.203 {
 		iface MIXER
-		name 'SPK MIXL DAC L2 Switch'
+		name 'Mono DAC MIXL DAC R2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2303,7 +2302,7 @@ state.bytcrrt5640 {
 	}
 	control.204 {
 		iface MIXER
-		name 'SPK MIXL OUT MIXL Switch'
+		name 'Mono DAC MIXR DAC R1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -2313,8 +2312,8 @@ state.bytcrrt5640 {
 	}
 	control.205 {
 		iface MIXER
-		name 'SPK MIXR REC MIXR Switch'
-		value false
+		name 'Mono DAC MIXR DAC R2 Switch'
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2322,1291 +2321,6 @@ state.bytcrrt5640 {
 		}
 	}
 	control.206 {
-		iface MIXER
-		name 'SPK MIXR INR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.207 {
-		iface MIXER
-		name 'SPK MIXR DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.208 {
-		iface MIXER
-		name 'SPK MIXR DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.209 {
-		iface MIXER
-		name 'SPK MIXR OUT MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.210 {
-		iface MIXER
-		name 'SPOL MIX DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.211 {
-		iface MIXER
-		name 'SPOL MIX DAC L1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.212 {
-		iface MIXER
-		name 'SPOL MIX SPKVOL R Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.213 {
-		iface MIXER
-		name 'SPOL MIX SPKVOL L Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.214 {
-		iface MIXER
-		name 'SPOL MIX BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.215 {
-		iface MIXER
-		name 'SPOR MIX DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.216 {
-		iface MIXER
-		name 'SPOR MIX SPKVOL R Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.217 {
-		iface MIXER
-		name 'SPOR MIX BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.218 {
-		iface MIXER
-		name 'LOUT MIX DAC L1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.219 {
-		iface MIXER
-		name 'LOUT MIX DAC R1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.220 {
-		iface MIXER
-		name 'LOUT MIX OUTVOL L Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.221 {
-		iface MIXER
-		name 'LOUT MIX OUTVOL R Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.222 {
-		iface MIXER
-		name 'Speaker L Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.223 {
-		iface MIXER
-		name 'Speaker R Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.224 {
-		iface MIXER
-		name 'HP L Playback Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.225 {
-		iface MIXER
-		name 'HP R Playback Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.226 {
-		iface MIXER
-		name 'DAC L2 Mux'
-		value IF2
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 IF2
-			item.1 'Base L/R'
-		}
-	}
-	control.227 {
-		iface MIXER
-		name 'DAC R2 Mux'
-		value IF2
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 IF2
-		}
-	}
-	control.228 {
-		iface MIXER
-		name 'Stereo DAC MIXL DAC L1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.229 {
-		iface MIXER
-		name 'Stereo DAC MIXL DAC L2 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.230 {
-		iface MIXER
-		name 'Stereo DAC MIXL ANC Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.231 {
-		iface MIXER
-		name 'Stereo DAC MIXR DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.232 {
-		iface MIXER
-		name 'Stereo DAC MIXR DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.233 {
-		iface MIXER
-		name 'Stereo DAC MIXR ANC Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.234 {
-		iface MIXER
-		name 'OUT MIXL SPK MIXL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.235 {
-		iface MIXER
-		name 'OUT MIXL BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.236 {
-		iface MIXER
-		name 'OUT MIXL INL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.237 {
-		iface MIXER
-		name 'OUT MIXL REC MIXL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.238 {
-		iface MIXER
-		name 'OUT MIXL DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.239 {
-		iface MIXER
-		name 'OUT MIXL DAC L2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.240 {
-		iface MIXER
-		name 'OUT MIXL DAC L1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.241 {
-		iface MIXER
-		name 'OUT MIXR SPK MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.242 {
-		iface MIXER
-		name 'OUT MIXR BST2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.243 {
-		iface MIXER
-		name 'OUT MIXR BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.244 {
-		iface MIXER
-		name 'OUT MIXR INR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.245 {
-		iface MIXER
-		name 'OUT MIXR REC MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.246 {
-		iface MIXER
-		name 'OUT MIXR DAC L2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.247 {
-		iface MIXER
-		name 'OUT MIXR DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.248 {
-		iface MIXER
-		name 'OUT MIXR DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.249 {
-		iface MIXER
-		name 'HPO MIX DAC2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.250 {
-		iface MIXER
-		name 'HPO MIX DAC1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.251 {
-		iface MIXER
-		name 'HPO MIX HPVOL Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.252 {
-		iface MIXER
-		name 'Mono MIX DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.253 {
-		iface MIXER
-		name 'Mono MIX DAC L2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.254 {
-		iface MIXER
-		name 'Mono MIX OUTVOL R Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.255 {
-		iface MIXER
-		name 'Mono MIX OUTVOL L Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.256 {
-		iface MIXER
-		name 'Mono MIX BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-}
-state.bytrt5640 {
-	control.1 {
-		iface MIXER
-		name 'Mono Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.2 {
-		iface MIXER
-		name 'Mono DAC Playback Volume'
-		value.0 175
-		value.1 175
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 175'
-			dbmin -65625
-			dbmax 0
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.3 {
-		iface MIXER
-		name 'Speaker Channel Switch'
-		value.0 true
-		value.1 true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
-	control.4 {
-		iface MIXER
-		name 'Speaker Playback Volume'
-		value.0 0
-		value.1 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 39'
-			dbmin -4650
-			dbmax 1200
-			dbvalue.0 -4650
-			dbvalue.1 -4650
-		}
-	}
-	control.5 {
-		iface MIXER
-		name 'HP Channel Switch'
-		value.0 true
-		value.1 true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
-	control.6 {
-		iface MIXER
-		name 'HP Playback Volume'
-		value.0 31
-		value.1 31
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 39'
-			dbmin -4650
-			dbmax 1200
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.7 {
-		iface MIXER
-		name 'OUT Playback Switch'
-		value.0 true
-		value.1 true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
-	control.8 {
-		iface MIXER
-		name 'OUT Channel Switch'
-		value.0 true
-		value.1 true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
-	control.9 {
-		iface MIXER
-		name 'OUT Playback Volume'
-		value.0 31
-		value.1 31
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 39'
-			dbmin -4650
-			dbmax 1200
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.10 {
-		iface MIXER
-		name 'DAC2 Playback Switch'
-		value.0 true
-		value.1 true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
-	control.11 {
-		iface MIXER
-		name 'DAC1 Playback Volume'
-		value.0 175
-		value.1 175
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 175'
-			dbmin -65625
-			dbmax 0
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.12 {
-		iface MIXER
-		name 'IN1 Boost'
-		value 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 1
-			range '0 - 8'
-			dbmin 0
-			dbmax 5200
-			dbvalue.0 0
-		}
-	}
-	control.13 {
-		iface MIXER
-		name 'IN2 Boost'
-		value 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 1
-			range '0 - 8'
-			dbmin 0
-			dbmax 5200
-			dbvalue.0 0
-		}
-	}
-	control.14 {
-		iface MIXER
-		name 'IN3 Boost'
-		value 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 1
-			range '0 - 8'
-			dbmin 0
-			dbmax 5200
-			dbvalue.0 0
-		}
-	}
-	control.15 {
-		iface MIXER
-		name 'IN Capture Volume'
-		value.0 23
-		value.1 23
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 31'
-			dbmin -3450
-			dbmax 1200
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.16 {
-		iface MIXER
-		name 'ADC Capture Switch'
-		value.0 true
-		value.1 true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
-	control.17 {
-		iface MIXER
-		name 'ADC Capture Volume'
-		value.0 47
-		value.1 47
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 127'
-			dbmin -17625
-			dbmax 30000
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.18 {
-		iface MIXER
-		name 'Mono ADC Capture Volume'
-		value.0 47
-		value.1 47
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 127'
-			dbmin -17625
-			dbmax 30000
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.19 {
-		iface MIXER
-		name 'ADC Boost Gain'
-		value.0 0
-		value.1 0
-		comment {
-			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 3'
-			dbmin 0
-			dbmax 3600
-			dbvalue.0 0
-			dbvalue.1 0
-		}
-	}
-	control.20 {
-		iface MIXER
-		name 'Class D SPK Ratio Control'
-		value '2.77x'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 '1.66x'
-			item.1 '1.83x'
-			item.2 '1.94x'
-			item.3 '2x'
-			item.4 '2.11x'
-			item.5 '2.22x'
-			item.6 '2.33x'
-			item.7 '2.44x'
-			item.8 '2.55x'
-			item.9 '2.66x'
-			item.10 '2.77x'
-		}
-	}
-	control.21 {
-		iface MIXER
-		name 'ADC IF1 Data Switch'
-		value Normal
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 Normal
-			item.1 Swap
-			item.2 'left copy to right'
-			item.3 'right copy to left'
-		}
-	}
-	control.22 {
-		iface MIXER
-		name 'DAC IF1 Data Switch'
-		value Normal
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 Normal
-			item.1 Swap
-			item.2 'left copy to right'
-			item.3 'right copy to left'
-		}
-	}
-	control.23 {
-		iface MIXER
-		name 'ADC IF2 Data Switch'
-		value Normal
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 Normal
-			item.1 Swap
-			item.2 'left copy to right'
-			item.3 'right copy to left'
-		}
-	}
-	control.24 {
-		iface MIXER
-		name 'DAC IF2 Data Switch'
-		value Normal
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 Normal
-			item.1 Swap
-			item.2 'left copy to right'
-			item.3 'right copy to left'
-		}
-	}
-	control.25 {
-		iface MIXER
-		name 'Headphone Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.26 {
-		iface MIXER
-		name 'Headset Mic Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.27 {
-		iface MIXER
-		name 'Internal Mic Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.28 {
-		iface MIXER
-		name 'Speaker Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.29 {
-		iface MIXER
-		name 'RECMIXL HPOL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.30 {
-		iface MIXER
-		name 'RECMIXL INL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.31 {
-		iface MIXER
-		name 'RECMIXL BST3 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.32 {
-		iface MIXER
-		name 'RECMIXL BST2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.33 {
-		iface MIXER
-		name 'RECMIXL BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.34 {
-		iface MIXER
-		name 'RECMIXL OUT MIXL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.35 {
-		iface MIXER
-		name 'RECMIXR HPOR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.36 {
-		iface MIXER
-		name 'RECMIXR INR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.37 {
-		iface MIXER
-		name 'RECMIXR BST3 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.38 {
-		iface MIXER
-		name 'RECMIXR BST2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.39 {
-		iface MIXER
-		name 'RECMIXR BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.40 {
-		iface MIXER
-		name 'RECMIXR OUT MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.41 {
-		iface MIXER
-		name 'Stereo ADC2 Mux'
-		value DMIC1
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 DMIC1
-			item.1 DMIC2
-			item.2 'DIG MIX'
-		}
-	}
-	control.42 {
-		iface MIXER
-		name 'Stereo ADC1 Mux'
-		value ADC
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'DIG MIX'
-			item.1 ADC
-		}
-	}
-	control.43 {
-		iface MIXER
-		name 'Mono ADC L2 Mux'
-		value 'DMIC L1'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'DMIC L1'
-			item.1 'DMIC L2'
-			item.2 'Mono DAC MIXL'
-		}
-	}
-	control.44 {
-		iface MIXER
-		name 'Mono ADC L1 Mux'
-		value ADCL
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'Mono DAC MIXL'
-			item.1 ADCL
-		}
-	}
-	control.45 {
-		iface MIXER
-		name 'Mono ADC R1 Mux'
-		value ADCR
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'Mono DAC MIXR'
-			item.1 ADCR
-		}
-	}
-	control.46 {
-		iface MIXER
-		name 'Mono ADC R2 Mux'
-		value 'DMIC R1'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'DMIC R1'
-			item.1 'DMIC R2'
-			item.2 'Mono DAC MIXR'
-		}
-	}
-	control.47 {
-		iface MIXER
-		name 'Stereo ADC MIXL ADC1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.48 {
-		iface MIXER
-		name 'Stereo ADC MIXL ADC2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.49 {
-		iface MIXER
-		name 'Stereo ADC MIXR ADC1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.50 {
-		iface MIXER
-		name 'Stereo ADC MIXR ADC2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.51 {
-		iface MIXER
-		name 'Mono ADC MIXL ADC1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.52 {
-		iface MIXER
-		name 'Mono ADC MIXL ADC2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.53 {
-		iface MIXER
-		name 'Mono ADC MIXR ADC1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.54 {
-		iface MIXER
-		name 'Mono ADC MIXR ADC2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.55 {
-		iface MIXER
-		name 'DAI select'
-		value '1:1|2:2'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 '1:1|2:2'
-			item.1 '1:2|2:1'
-			item.2 '1:1|2:1'
-			item.3 '1:2|2:2'
-		}
-	}
-	control.56 {
-		iface MIXER
-		name 'SDI select'
-		value IF1
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 IF1
-			item.1 IF2
-		}
-	}
-	control.57 {
-		iface MIXER
-		name 'DAC MIXL Stereo ADC Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.58 {
-		iface MIXER
-		name 'DAC MIXL INF1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.59 {
-		iface MIXER
-		name 'DAC MIXR Stereo ADC Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.60 {
-		iface MIXER
-		name 'DAC MIXR INF1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.61 {
-		iface MIXER
-		name 'Mono DAC MIXL DAC L1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.62 {
-		iface MIXER
-		name 'Mono DAC MIXL DAC L2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.63 {
-		iface MIXER
-		name 'Mono DAC MIXL DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.64 {
-		iface MIXER
-		name 'Mono DAC MIXR DAC R1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.65 {
-		iface MIXER
-		name 'Mono DAC MIXR DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.66 {
 		iface MIXER
 		name 'Mono DAC MIXR DAC L2 Switch'
 		value false
@@ -3616,9 +2330,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.67 {
+	control.207 {
 		iface MIXER
-		name 'DIG MIXL DAC L1 Switch'
+		name 'DAC MIXL Sto DAC Mix L Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3626,9 +2340,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.68 {
+	control.208 {
 		iface MIXER
-		name 'DIG MIXL DAC L2 Switch'
+		name 'DAC MIXL DAC L2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3636,9 +2350,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.69 {
+	control.209 {
 		iface MIXER
-		name 'DIG MIXR DAC R1 Switch'
+		name 'DAC MIXL DAC R2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3646,9 +2360,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.70 {
+	control.210 {
 		iface MIXER
-		name 'DIG MIXR DAC R2 Switch'
+		name 'DAC MIXR Sto DAC Mix R Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3656,9 +2370,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.71 {
+	control.211 {
 		iface MIXER
-		name 'SPK MIXL REC MIXL Switch'
+		name 'DAC MIXR DAC R2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3666,9 +2380,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.72 {
+	control.212 {
 		iface MIXER
-		name 'SPK MIXL INL Switch'
+		name 'DAC MIXR DAC L2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3676,7 +2390,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.73 {
+	control.213 {
 		iface MIXER
 		name 'SPK MIXL DAC L1 Switch'
 		value false
@@ -3686,19 +2400,19 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.74 {
+	control.214 {
 		iface MIXER
 		name 'SPK MIXL DAC L2 Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
 			count 1
 		}
 	}
-	control.75 {
+	control.215 {
 		iface MIXER
-		name 'SPK MIXL OUT MIXL Switch'
+		name 'SPK MIXL INL Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3706,9 +2420,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.76 {
+	control.216 {
 		iface MIXER
-		name 'SPK MIXR REC MIXR Switch'
+		name 'SPK MIXL BST1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3716,17 +2430,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.77 {
-		iface MIXER
-		name 'SPK MIXR INR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.78 {
+	control.217 {
 		iface MIXER
 		name 'SPK MIXR DAC R1 Switch'
 		value false
@@ -3736,29 +2440,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.79 {
+	control.218 {
 		iface MIXER
 		name 'SPK MIXR DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.80 {
-		iface MIXER
-		name 'SPK MIXR OUT MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.81 {
-		iface MIXER
-		name 'SPOL MIX DAC R1 Switch'
 		value true
 		comment {
 			access 'read write'
@@ -3766,9 +2450,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.82 {
+	control.219 {
 		iface MIXER
-		name 'SPOL MIX DAC L1 Switch'
+		name 'SPK MIXR INR Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3776,9 +2460,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.83 {
+	control.220 {
 		iface MIXER
-		name 'SPOL MIX SPKVOL R Switch'
+		name 'SPK MIXR BST2 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -3786,240 +2470,17 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.84 {
-		iface MIXER
-		name 'SPOL MIX SPKVOL L Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.85 {
-		iface MIXER
-		name 'SPOL MIX BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.86 {
-		iface MIXER
-		name 'SPOR MIX DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.87 {
-		iface MIXER
-		name 'SPOR MIX SPKVOL R Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.88 {
-		iface MIXER
-		name 'SPOR MIX BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.89 {
-		iface MIXER
-		name 'LOUT MIX DAC L1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.90 {
-		iface MIXER
-		name 'LOUT MIX DAC R1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.91 {
-		iface MIXER
-		name 'LOUT MIX OUTVOL L Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.92 {
-		iface MIXER
-		name 'LOUT MIX OUTVOL R Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.93 {
-		iface MIXER
-		name 'Speaker L Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.94 {
-		iface MIXER
-		name 'Speaker R Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.95 {
-		iface MIXER
-		name 'HP L Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.96 {
-		iface MIXER
-		name 'HP R Playback Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.97 {
-		iface MIXER
-		name 'DAC L2 Mux'
-		value IF2
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 IF2
-			item.1 'Base L/R'
-		}
-	}
-	control.98 {
-		iface MIXER
-		name 'DAC R2 Mux'
-		value IF2
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 IF2
-		}
-	}
-	control.99 {
-		iface MIXER
-		name 'Stereo DAC MIXL DAC L1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.100 {
-		iface MIXER
-		name 'Stereo DAC MIXL DAC L2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.101 {
-		iface MIXER
-		name 'Stereo DAC MIXL ANC Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.102 {
-		iface MIXER
-		name 'Stereo DAC MIXR DAC R1 Switch'
-		value true
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.103 {
-		iface MIXER
-		name 'Stereo DAC MIXR DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.104 {
-		iface MIXER
-		name 'Stereo DAC MIXR ANC Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.105 {
-		iface MIXER
-		name 'OUT MIXL SPK MIXL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.106 {
+	control.221 {
 		iface MIXER
 		name 'OUT MIXL BST1 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
 			count 1
 		}
 	}
-	control.107 {
+	control.222 {
 		iface MIXER
 		name 'OUT MIXL INL Switch'
 		value false
@@ -4029,27 +2490,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.108 {
-		iface MIXER
-		name 'OUT MIXL REC MIXL Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.109 {
-		iface MIXER
-		name 'OUT MIXL DAC R2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.110 {
+	control.223 {
 		iface MIXER
 		name 'OUT MIXL DAC L2 Switch'
 		value false
@@ -4059,7 +2500,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.111 {
+	control.224 {
 		iface MIXER
 		name 'OUT MIXL DAC L1 Switch'
 		value false
@@ -4069,17 +2510,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.112 {
-		iface MIXER
-		name 'OUT MIXR SPK MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.113 {
+	control.225 {
 		iface MIXER
 		name 'OUT MIXR BST2 Switch'
 		value false
@@ -4089,17 +2520,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.114 {
-		iface MIXER
-		name 'OUT MIXR BST1 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.115 {
+	control.226 {
 		iface MIXER
 		name 'OUT MIXR INR Switch'
 		value false
@@ -4109,27 +2530,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.116 {
-		iface MIXER
-		name 'OUT MIXR REC MIXR Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.117 {
-		iface MIXER
-		name 'OUT MIXR DAC L2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.118 {
+	control.227 {
 		iface MIXER
 		name 'OUT MIXR DAC R2 Switch'
 		value false
@@ -4139,7 +2540,7 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.119 {
+	control.228 {
 		iface MIXER
 		name 'OUT MIXR DAC R1 Switch'
 		value false
@@ -4149,19 +2550,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.120 {
+	control.229 {
 		iface MIXER
-		name 'HPO MIX DAC2 Switch'
-		value false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.121 {
-		iface MIXER
-		name 'HPO MIX DAC1 Switch'
+		name 'SPKVOL L Switch'
 		value true
 		comment {
 			access 'read write'
@@ -4169,9 +2560,199 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.122 {
+	control.230 {
+		iface MIXER
+		name 'SPKVOL R Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.231 {
+		iface MIXER
+		name 'HPOVOL MIXL DAC1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.232 {
+		iface MIXER
+		name 'HPOVOL MIXL DAC2 Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.233 {
+		iface MIXER
+		name 'HPOVOL MIXL INL Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.234 {
+		iface MIXER
+		name 'HPOVOL MIXL BST1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.235 {
+		iface MIXER
+		name 'HPOVOL MIXR DAC1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.236 {
+		iface MIXER
+		name 'HPOVOL MIXR DAC2 Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.237 {
+		iface MIXER
+		name 'HPOVOL MIXR INR Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.238 {
+		iface MIXER
+		name 'HPOVOL MIXR BST2 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.239 {
+		iface MIXER
+		name 'HPOVOL L Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.240 {
+		iface MIXER
+		name 'HPOVOL R Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.241 {
+		iface MIXER
+		name 'SPOL MIX DAC R1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.242 {
+		iface MIXER
+		name 'SPOL MIX DAC L1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.243 {
+		iface MIXER
+		name 'SPOL MIX SPKVOL R Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.244 {
+		iface MIXER
+		name 'SPOL MIX SPKVOL L Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.245 {
+		iface MIXER
+		name 'SPOR MIX DAC R1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.246 {
+		iface MIXER
+		name 'SPOR MIX SPKVOL R Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.247 {
+		iface MIXER
+		name 'HPO MIX DAC1 Switch'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.248 {
 		iface MIXER
 		name 'HPO MIX HPVOL Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.249 {
+		iface MIXER
+		name 'LOUT MIX DAC L1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -4179,9 +2760,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.123 {
+	control.250 {
 		iface MIXER
-		name 'Mono MIX DAC R2 Switch'
+		name 'LOUT MIX DAC R1 Switch'
 		value false
 		comment {
 			access 'read write'
@@ -4189,9 +2770,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.124 {
+	control.251 {
 		iface MIXER
-		name 'Mono MIX DAC L2 Switch'
+		name 'LOUT MIX OUTMIX L Switch'
 		value false
 		comment {
 			access 'read write'
@@ -4199,9 +2780,9 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.125 {
+	control.252 {
 		iface MIXER
-		name 'Mono MIX OUTVOL R Switch'
+		name 'LOUT MIX OUTMIX R Switch'
 		value false
 		comment {
 			access 'read write'
@@ -4209,9 +2790,33 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.126 {
+	control.253 {
 		iface MIXER
-		name 'Mono MIX OUTVOL L Switch'
+		name 'PDM1 L Mux'
+		value 'Mono DAC'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Mono DAC'
+			item.1 'Stereo DAC'
+		}
+	}
+	control.254 {
+		iface MIXER
+		name 'PDM1 R Mux'
+		value 'Mono DAC'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Mono DAC'
+			item.1 'Stereo DAC'
+		}
+	}
+	control.255 {
+		iface MIXER
+		name 'PDM1 L Switch'
 		value false
 		comment {
 			access 'read write'
@@ -4219,14 +2824,126 @@ state.bytrt5640 {
 			count 1
 		}
 	}
-	control.127 {
+	control.256 {
 		iface MIXER
-		name 'Mono MIX BST1 Switch'
+		name 'PDM1 R Switch'
 		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
 			count 1
+		}
+	}
+	control.257 {
+		iface MIXER
+		name 'RT5645 IF1 DAC1 L Mux'
+		value Slot0
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Slot0
+			item.1 Slot1
+			item.2 Slot2
+			item.3 Slot3
+		}
+	}
+	control.258 {
+		iface MIXER
+		name 'RT5645 IF1 DAC1 R Mux'
+		value Slot1
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Slot0
+			item.1 Slot1
+			item.2 Slot2
+			item.3 Slot3
+		}
+	}
+	control.259 {
+		iface MIXER
+		name 'RT5645 IF1 DAC2 L Mux'
+		value Slot2
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Slot0
+			item.1 Slot1
+			item.2 Slot2
+			item.3 Slot3
+		}
+	}
+	control.260 {
+		iface MIXER
+		name 'RT5645 IF1 DAC2 R Mux'
+		value Slot3
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Slot0
+			item.1 Slot1
+			item.2 Slot2
+			item.3 Slot3
+		}
+	}
+	control.261 {
+		iface MIXER
+		name 'RT5645 IF1 ADC Mux'
+		value IF_ADC1/IF_ADC2/VAD_ADC
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 IF_ADC1/IF_ADC2/VAD_ADC
+			item.1 IF_ADC2/IF_ADC1/VAD_ADC
+			item.2 VAD_ADC/IF_ADC1/IF_ADC2
+			item.3 VAD_ADC/IF_ADC2/IF_ADC1
+		}
+	}
+	control.262 {
+		iface MIXER
+		name 'RT5645 IF1 ADC1 Swap Mux'
+		value L/R
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 L/R
+			item.1 R/L
+			item.2 L/L
+			item.3 R/R
+		}
+	}
+	control.263 {
+		iface MIXER
+		name 'RT5645 IF1 ADC2 Swap Mux'
+		value L/R
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 L/R
+			item.1 R/L
+			item.2 L/L
+			item.3 R/R
+		}
+	}
+	control.264 {
+		iface MIXER
+		name 'RT5645 IF1 ADC3 Swap Mux'
+		value L/R
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 L/R
+			item.1 R/L
+			item.2 L/L
+			item.3 R/R
 		}
 	}
 }
