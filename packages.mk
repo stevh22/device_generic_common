@@ -21,6 +21,7 @@ PRODUCT_PACKAGES := \
     Development \
     Galaxy4 \
     GlobalTime \
+    HardwareCollector \
     HoloSpiralWallpaper \
     Launcher3 \
     LiveWallpapers \
@@ -32,6 +33,7 @@ PRODUCT_PACKAGES := \
     Provision \
     RSSReader \
     VisualizationWallpapers \
+    WallpaperPicker \
     camera.x86 \
     chat \
     com.android.future.usb.accessory \
