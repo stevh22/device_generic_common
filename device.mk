@@ -22,10 +22,12 @@ PRODUCT_PACKAGES += Chrome \
 	Hangouts \
     GoogleTTS \
     YouTube \
-    PixelIcons \
-    Wallpapers \
-    WebViewGoogle 
-       
+    PixelIcons \ 
+    PixelLauncher \ 
+    Wallpapers \ 
+    PixelLauncherIcons \ 
+    WebViewGoogle  
+           
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
 GAPPS_EXCLUDED_PACKAGES := FaceLock
