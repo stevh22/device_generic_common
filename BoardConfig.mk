@@ -89,6 +89,7 @@ ZIP_OPTIMIZATION_NO_INTEGRITY := true
 #CM_VERSION := 14.0
 
 # Blissful Building Options
+BLISS_TABLET := true
 BLISS_CHANGELOG := true
 #BLISS_AUDIO_MOD := viper
 #BLISS_BUILD_BLOCK := 1
