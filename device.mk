@@ -22,10 +22,10 @@ PRODUCT_PACKAGES += Chrome \
 	Hangouts \
     GoogleTTS \
     YouTube \
-    PixelIcons \ 
-    PixelLauncher \ 
-    Wallpapers \ 
-    PixelLauncherIcons \ 
+    PixelIcons \
+    PixelLauncher \
+    Wallpapers \
+    PixelLauncherIcons \
     WebViewGoogle  
            
 GAPPS_FORCE_BROWSER_OVERRIDES := true
@@ -42,7 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     media.sf.hwaccel=1 \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
-    ro.recents.grid=true
+
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
