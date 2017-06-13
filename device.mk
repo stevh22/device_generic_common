@@ -43,7 +43,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
 
-
+#Bliss-x86 added packages
+PRODUCT_PACKAGES += BluetoothExt \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.nativebridge=1 \
