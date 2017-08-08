@@ -89,6 +89,7 @@ ZIP_OPTIMIZATION_NO_INTEGRITY := true
 #CM_VERSION := 14.0
 
 # Blissful Building Options
+SYS_UPGRADE_DEFAULT_URL := https://downloads.blissroms.com/Bliss/Official/x86/oto_ota.ver
 BLISS_TABLET := true
 BLISS_CHANGELOG := true
 #BLISS_AUDIO_MOD := viper
