@@ -15,22 +15,24 @@
 #
 
 #OpenGAPPS
-GAPPS_VARIANT := micro
+GAPPS_VARIANT := pico
 PRODUCT_PACKAGES += Chrome \
-	KeyboardGoogle \
-	LatinImeGoogle \
-	Hangouts \
+    KeyboardGoogle \
+    LatinImeGoogle \
     GoogleTTS \
     YouTube \
     PixelIcons \
     PixelLauncher \
     Wallpapers \
     PixelLauncherIcons \
-    WebViewGoogle  
-           
+    WebViewGoogle \
+    GoogleServicesFramework \
+    GoogleLoginService \
+    
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
-GAPPS_EXCLUDED_PACKAGES := FaceLock
+GAPPS_EXCLUDED_PACKAGES := FaceLock \
+    AndroidPlatformServices \
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
@@ -153,5 +155,4 @@ $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 $(call inherit-product, vendor/bliss/config/common.mk)
 
 #OpenGAPPS
-$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
-
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
