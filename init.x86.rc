@@ -44,6 +44,9 @@ on boot
     setprop persist.sys.strictmode.disable 1
     # workaround for h.265 slowness
     setprop sys.media.vdec.drop 0
+    # some custom settings
+    settings put global enable_freeform_support 1
+    settings put global op_voice_recording_supported_by_mcc 1.
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant -dd \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
