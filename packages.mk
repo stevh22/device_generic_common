@@ -77,6 +77,7 @@ PRODUCT_PACKAGES += \
     make_f2fs \
     mkfs.exfat \
     mkntfs \
+    mksquashfs \
     mount.exfat \
     ntfs-3g \
     ntfsfix \
@@ -91,11 +92,13 @@ PRODUCT_PACKAGES += \
 # Stagefright FFMPEG plugins
 PRODUCT_PACKAGES += \
     i965_drv_video \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
+
+#    libffmpeg_extractor \
+#    libffmpeg_omx \
+#    media_codecs_ffmpeg.xml
 
 # Third party apps
 PRODUCT_PACKAGES += \
     Eleven \
     TSCalibration2 \
+    Superuser \

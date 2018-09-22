@@ -14,6 +14,32 @@
 # limitations under the License.
 #
 
+#GAPPS_VARIANT := pico
+
+#PRODUCT_PACKAGES += \
+#    Wallpapers \
+#    PixelIcons \
+#    PixelLauncherIcons \
+#    PixelLauncher \
+#    Chrome \
+#    KeyboardGoogle \
+#    LatinImeGoogle \
+#    YouTube \
+#    WebViewGoogle \
+
+#GAPPS_EXCLUDED_PACKAGES := \
+#    PrebuiltGmsCoreInstantApps \
+#    GoogleCamera \
+#    FaceLock \
+#    Phonesky \
+
+#PRODUCT_PROPERTY_OVERRIDES := \
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
+#    ro.config.notification_sound=Krypton.ogg \
+#    ro.config.alarm_alert=Scandium.ogg \
+#    ro.config.ringtone=Sceptrum.ogg
+
+
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -50,7 +76,6 @@ PRODUCT_COPY_FILES += \
     device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    frameworks/base/config/compiled-classes-phone:system/etc/compiled-classes \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -76,6 +101,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f)))
+
+//    frameworks/base/config/compiled-classes-phone:system/etc/compiled-classes \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -115,3 +142,10 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
+
+#$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+
+#$(call inherit-product, vendor/supersu/vendor_x64.mk)
+#$(call inherit-product, vendor/supersu/vendor_x86.mk)
+
+$(call inherit-product, vendor/x86/addon.mk)

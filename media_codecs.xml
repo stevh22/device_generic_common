@@ -75,10 +75,10 @@ Only the three quirks included above are recognized at this point:
     matching surfaceflinger support that can render the custom format to
     a texture and possibly other code, so just DON'T USE THIS QUIRK.
 
+    <Include href="media_codecs_ffmpeg.xml" />
 -->
 
 <MediaCodecs>
-    <Include href="media_codecs_ffmpeg.xml" />
     <Include href="media_codecs_google_audio.xml" />
     <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>

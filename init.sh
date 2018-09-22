@@ -55,9 +55,6 @@ function init_hal_bluetooth()
 	done
 
 	case "$PRODUCT" in
-		T100TAF)
-			set_property bluetooth.interface hci1
-			;;
 		T10*TA|M80TA|HP*Omni*)
 			BTUART_PORT=/dev/ttyS1
 			set_property hal.bluetooth.uart.proto bcm
@@ -153,7 +150,7 @@ function init_hal_gralloc()
 			;;
 		0*inteldrmfb|0*radeondrmfb|0*nouveaufb|0*svgadrmfb|0*amdgpudrmfb)
 			if [ "$HWACCEL" != "0" ]; then
-				set_property ro.hardware.gralloc drm
+                set_property ro.hardware.gralloc drm
 				set_drm_mode
 			fi
 			;;
@@ -270,7 +267,7 @@ function init_hal_sensors()
 		*ST70416-6*)
 			set_property ro.iio.accel.order 102
 			;;
-		*T*0*TA*|*pnEZpad*)
+		*T10*TA*|*pnEZpad*)
 			set_property ro.iio.accel.y.opt_scale -1
 			;;
 		*)
@@ -448,6 +445,15 @@ function do_bootcomplete()
 			alsa_amixer -c $c set 'Internal Mic Boost' 1
 		fi
 	done
+
+	# check wifi setup
+	FILE_CHECK=/data/misc/wifi/wpa_supplicant.conf
+
+	if [ ! -f "$FILE_CHECK" ]; then
+	    cp -a /system/etc/wifi/wpa_supplicant.conf $FILE_CHECK
+            chown 1010.1010 $FILE_CHECK
+            chmod 660 $FILE_CHECK
+	fi
 
 	post_bootcomplete
 }

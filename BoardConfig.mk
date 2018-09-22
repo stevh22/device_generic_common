@@ -2,26 +2,34 @@
 # BoardConfig.mk for x86 platform
 #
 
+ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5096m
+
 TARGET_BOARD_PLATFORM := android-x86
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_LINUX := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
 
 BOARD_USE_LEGACY_UI := true
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE = $(if $(MKSQUASHFS),0,1610612736)
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
+#BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := squashfs
+#BOARD_SYSTEMIMAGE_SQUASHFS_COMPRESSOR := gzip
+#TARGET_USERIMAGES_SPARSE_SQUASHFS_DISABLED := true
 
 # customize the malloced address to be 16-byte aligned
 BOARD_MALLOC_ALIGNMENT := 16
 
 # Enable dex-preoptimization to speed up the first boot sequence
 # of an SDK AVD. Note that this operation only works on Linux for now
-ifeq ($(HOST_OS),linux)
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_PIC := true
-endif
+# ifeq ($(HOST_OS),linux)
+# WITH_DEXPREOPT := true
+# WITH_DEXPREOPT_PIC := true
+# endif
+
+# Enable for deodex ROM
+#WITH_DEXPREOPT := false
+#WITH_DEXPREOPT_PIC := false
 
 # the following variables could be overridden
 TARGET_PRELINK_MODULE := false
@@ -60,20 +68,24 @@ USE_INTEL_OMX_COMPONENTS := true
 
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS ?= 3
-BOARD_USES_DRM_GRALLOC := true
 BOARD_USES_DRM_HWCOMPOSER ?= true
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
+# New for Pie
+BOARD_USES_DRM_GRALLOC ?= true
+TARGET_USES_HWC2 ?= true
+
 USE_CAMERA_STUB ?= false
 
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
+SUPERUSER_EMBEDDED := false
+#SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # This enables the wpa wireless driver
 BOARD_WPA_SUPPLICANT_DRIVER ?= NL80211
 WPA_SUPPLICANT_VERSION ?= VER_2_1_DEVEL
 
 BOARD_GPU_DRIVERS ?= i915 i965 nouveau r300g r600g radeonsi virgl vmwgfx
+#BOARD_GPU_DRIVERS ?= i915 i965 virgl vmwgfx
 ifneq ($(strip $(BOARD_GPU_DRIVERS)),)
 TARGET_HARDWARE_3D := true
 endif
