@@ -14,24 +14,56 @@
 # limitations under the License.
 #
 
-#GAPPS_VARIANT := pico
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1080
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOTANIMATION_HALF_RES := true
 
-#PRODUCT_PACKAGES += \
-#    Wallpapers \
-#    PixelIcons \
-#    PixelLauncherIcons \
-#    PixelLauncher \
-#    Chrome \
-#    KeyboardGoogle \
-#    LatinImeGoogle \
-#    YouTube \
-#    WebViewGoogle \
+# Inherit some common Bliss stuff.
+$(call inherit-product, vendor/bliss/config/common.mk)
 
-#GAPPS_EXCLUDED_PACKAGES := \
-#    PrebuiltGmsCoreInstantApps \
-#    GoogleCamera \
-#    FaceLock \
-#    Phonesky \
+PRODUCT_COPY_FILES += \
+	vendor/bliss/prebuilt/common/etc/init.bliss.rc:system/etc/init/init.bliss.rc
+
+ifeq ($(USE_FOSS),true)
+  $(call inherit-product-if-exists, vendor/foss/foss.mk)
+endif
+
+
+ifneq ($(USE_OPENGAPPS),false)
+  $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
+	
+  PRODUCT_COPY_FILES += \
+	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera2.xml \
+  	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2015.xml \
+  	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2016.xml \
+	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2017.xml
+
+  DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay-gapps
+  GAPPS_VARIANT := nano
+  DONT_DEXPREOPT_PREBUILTS := true
+  WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+  GAPPS_FORCE_PACKAGE_OVERRIDES := true
+  GAPPS_FORCE_BROWSER_OVERRIDES := true
+  GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+  PRODUCT_PACKAGES += \
+	Chrome \
+	CalculatorGoogle \
+	CalendarGooglePrebuilt \
+	GoogleHome \
+	GoogleTTS \
+	KeyboardGoogle \
+	LatinImeGoogle \
+	phh-overrides \
+	PrebuiltDeskClockGoogle \
+	YouTube \
+	Wallpapers \
+	WebViewGoogle \
+	
+  GAPPS_EXCLUDED_PACKAGES := FaceLock \
+	PrebuiltGmsCoreInstantApps \
+
+endif
 
 #PRODUCT_PROPERTY_OVERRIDES := \
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
@@ -39,6 +71,7 @@
 #    ro.config.alarm_alert=Scandium.ogg \
 #    ro.config.ringtone=Sceptrum.ogg
 
+#EndCustomCrap
 
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
@@ -76,6 +109,8 @@ PRODUCT_COPY_FILES += \
     device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
+    frameworks/base/config/compiled-classes-phone:system/etc/compiled-classes \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -83,6 +118,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.gamepad.xml:system/etc/permissions/android.hardware.gamepad.xml \
     frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -96,13 +132,33 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:system/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml \
+    frameworks/native/data/etc/android.software.activities_on_secondary_displays.xml:system/etc/permissions/android.software.activities_on_secondary_displays.xml \
+    frameworks/native/data/etc/android.software.managed_users.xml:system/etc/permissions/android.software.managed_users.xml \
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
+    frameworks/native/data/etc/android.software.picture_in_picture.xml:system/etc/permissions/android.software.picture_in_picture.xml \
+    frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
-    $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f)))
+    $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f))) \
+    $(LOCAL_PATH)/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+    $(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
+    $(LOCAL_PATH)/lib/mediadrm/libplayreadydrmplugin.so:system/vendor/lib/mediadrm/libplayreadydrmplugin.so \
+    $(LOCAL_PATH)/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
+    $(LOCAL_PATH)/lib/libwvm.so:system/vendor/lib/libwvm.so \
 
 //    frameworks/base/config/compiled-classes-phone:system/etc/compiled-classes \
+
+# WIDEVINE OVERRIDES
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.less-secure=true \
+    drm.service.enabled=true \
+    ro.com.widevine.cachesize=16777216 \
+    media.amplayer.widevineenable=true
+
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -112,6 +168,9 @@ PRODUCT_AAPT_CONFIG := normal large xlarge mdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+
+# Don't dex preopt prebuilt apps that will be updated from Play Store
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Get Android 8.0 HIDL HALs
 $(call inherit-product,$(LOCAL_PATH)/treble.mk)
@@ -140,8 +199,23 @@ $(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-hea
 # Get GMS
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
+# Get GMS
+$(call inherit-product-if-exists,vendor/google/gapps.mk)
+
+# Include Google Apps
+$(call inherit-product-if-exists,vendor/google/gapps/gapps.mk)
+
+# Get PixelGapps
+# $(call inherit-product-if-exists,vendor/pixelgapps/pixel-gapps.mk)
+
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
+
+# $(call inherit-product-if-exists, vendor/foss/foss.mk)
+
+
+# Get native bridge settings
+#$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 
 #$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 

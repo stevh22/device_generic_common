@@ -90,7 +90,7 @@ ifneq ($(strip $(BOARD_GPU_DRIVERS)),)
 TARGET_HARDWARE_3D := true
 endif
 
-BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive $(if $(filter x86_64,$(TARGET_ARCH) $(TARGET_KERNEL_ARCH)),,vmalloc=192M)
+BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive androidboot.hardware=$(TARGET_PRODUCT) $(if $(filter x86_64,$(TARGET_ARCH) $(TARGET_KERNEL_ARCH)),,vmalloc=192M)
 TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
 
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
@@ -101,3 +101,19 @@ DEVICE_MANIFEST_FILE := device/generic/common/manifest.xml
 
 BOARD_SEPOLICY_DIRS += device/generic/common/sepolicy \
                        system/bt/vendor_libs/linux/sepolicy \
+
+# Bliss optimizations
+WITH_BLISS_CHARGER := false
+TARGET_PC_BUILD := true
+
+# Vendor Interface Manifest
+DEVICE_MATRIX_FILE := device/generic/common/compatibility_matrix.xml
+
+# Bliss OS specific 
+VER := 11.0
+RELEASE_OS_TITLE := Bliss-OS 
+BUILD_NAME_VARIANT := bliss-x86 
+INSTALL_PREFIX := bliss-x86-$(VER) 
+PREV_VERS := bliss-x86-6.4 bliss-x86-7.1.2 bliss-x86-8.0 bliss-x86-10.0 bliss-x86-10.1
+USE_FOSS := true
+USE_OPENGAPPS := false
