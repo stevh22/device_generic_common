@@ -106,9 +106,6 @@ BOARD_SEPOLICY_DIRS += device/generic/common/sepolicy \
 WITH_BLISS_CHARGER := false
 TARGET_PC_BUILD := true
 
-# Vendor Interface Manifest
-DEVICE_MATRIX_FILE := device/generic/common/compatibility_matrix.xml
-
 # Bliss OS specific 
 VER := 11.0
 RELEASE_OS_TITLE := Bliss-OS 
