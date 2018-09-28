@@ -23,7 +23,6 @@ PRODUCT_PACKAGES := \
     Galaxy4 \
     GlobalTime \
     HoloSpiralWallpaper \
-    Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
     MagicSmokeWallpapers \

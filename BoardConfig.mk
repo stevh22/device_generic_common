@@ -115,4 +115,3 @@ RELEASE_OS_TITLE := Bliss-OS
 BUILD_NAME_VARIANT := bliss-x86 
 INSTALL_PREFIX := bliss-x86-$(VER) 
 PREV_VERS := bliss-x86-6.4 bliss-x86-7.1.2 bliss-x86-8.0 bliss-x86-10.0 bliss-x86-10.1
-USE_OPENGAPPS := false
