@@ -102,11 +102,3 @@ PRODUCT_PACKAGES += \
     Eleven \
     TSCalibration2 \
     Superuser \
-    FDroid \
-    FDroidPrivilegedExtension \
-    FakeStore \
-    GmsCore \
-    GsfProxy \
-    MozillaNlpBackend \
-    NominatimNlpBackend \
-    com.google.android.maps \

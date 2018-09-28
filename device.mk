@@ -27,6 +27,18 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(USE_FOSS),true)
   $(call inherit-product-if-exists, vendor/foss/foss.mk)
+  
+  # FOSS apps
+	PRODUCT_PACKAGES += \
+		FDroid \
+		FDroidPrivilegedExtension \
+		FakeStore \
+		GmsCore \
+		GsfProxy \
+		MozillaNlpBackend \
+		NominatimNlpBackend \
+		com.google.android.maps \
+  
 endif
 
 
