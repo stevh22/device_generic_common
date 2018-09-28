@@ -160,6 +160,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/mediadrm/libplayreadydrmplugin.so:system/vendor/lib/mediadrm/libplayreadydrmplugin.so \
     $(LOCAL_PATH)/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     $(LOCAL_PATH)/lib/libwvm.so:system/vendor/lib/libwvm.so \
+    x86_installer/bin/Androidx86-Installv26.0003.exe:Androidx86-Installv26.0003.exe \
 
 //    frameworks/base/config/compiled-classes-phone:system/etc/compiled-classes \
 
