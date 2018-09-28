@@ -102,6 +102,9 @@ DEVICE_MANIFEST_FILE := device/generic/common/manifest.xml
 BOARD_SEPOLICY_DIRS += device/generic/common/sepolicy \
                        system/bt/vendor_libs/linux/sepolicy \
 
+# Vendor Interface Manifest
+DEVICE_MATRIX_FILE := device/generic/common/compatibility_matrix.xml
+
 # Bliss optimizations
 WITH_BLISS_CHARGER := false
 TARGET_PC_BUILD := true
