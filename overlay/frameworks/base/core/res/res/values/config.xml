@@ -86,6 +86,23 @@
         <item>"7,1"</item>
         <item>"9,1"</item>
     </string-array>
+    
+    <!-- Flag indicating whether the surface flinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where not
+         strictly needed. -->
+    <bool name="config_sf_limitedAlpha">false</bool>
+
+    <!-- Default value used to block data calls if ims is not
+         connected.  If you use the ims apn DCT will block
+         any other apn from connecting until ims apn is connected-->
+    <bool name="ImsConnectedDefaultValue">false</bool>
+
+    <!-- Flag indicating whether the surface flinger is inefficient
+         at performing a blur.  Used by parts of the UI to turn off
+         the blur effect where it isn't worth the performance hit.
+         As of Honeycomb, blurring is not supported anymore. -->
+    <bool name="config_sf_slowBlur">true</bool>
 
     <!-- Sets whether menu shortcuts should be displayed on panel menus when
                   a keyboard is present. -->
@@ -115,6 +132,16 @@
          The duplication is necessary, because this information is used before the features are
          available to the system.-->
     <bool name="config_freeformWindowManagement">true</bool>
+    
+    <!-- True if the device supports at least one form of multi-window.
+         E.g. freeform, split-screen, picture-in-picture. -->
+    <bool name="config_supportsMultiWindow">true</bool>
+
+    <!-- True if the device supports split screen as a form of multi-window. -->
+    <bool name="config_supportsSplitScreenMultiWindow">true</bool>
+
+    <!-- True if the device supports running activities on secondary displays. -->
+    <bool name="config_supportsMultiDisplay">true</bool>
 
     <!-- Controls the opacity of the navigation bar depending on the visibility of the
          various workspace stacks.
@@ -127,4 +154,124 @@
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
+    
+    <!-- The duration (in milliseconds) of a short animation. -->
+    <integer name="config_shortAnimTime">200</integer>
+
+    <!-- The duration (in milliseconds) of a medium-length animation. -->
+    <integer name="config_mediumAnimTime">400</integer>
+
+    <!-- The duration (in milliseconds) of a long animation. -->
+    <integer name="config_longAnimTime">500</integer>
+
+    <!-- The duration (in milliseconds) of the activity open/close and fragment open/close animations. -->
+    <integer name="config_activityShortDur">150</integer>
+    <integer name="config_activityDefaultDur">220</integer>
+
+    <!-- The duration (in milliseconds) of the tooltip show/hide animations. -->
+    <integer name="config_tooltipAnimTime">150</integer>
+
+    <!-- Duration for the dim animation behind a dialog.  This may be either
+         a percentage, which is relative to the duration of the enter/open
+         animation of the window being shown that is dimming behind, or it may
+         be an integer for a constant duration. -->
+    <fraction name="config_dimBehindFadeDuration">100%</fraction>
+
+    <!-- The maximum width we would prefer dialogs to be.  0 if there is no
+         maximum (let them grow as large as the screen).  Actual values are
+         specified for -large and -xlarge configurations. -->
+    <dimen name="config_prefDialogWidth">320dp</dimen>
+
+    <!-- Enables or disables fading edges when marquee is enabled in TextView.
+         Off by default, since the framebuffer readback used to implement the
+         fading edges is prohibitively expensive on most GPUs. -->
+    <bool name="config_ui_enableFadingMarquee">false</bool>
+
+    <!-- Whether dialogs should close automatically when the user touches outside
+         of them.  This should not normally be modified. -->
+    <bool name="config_closeDialogWhenTouchOutside">true</bool>
+    
+    <!-- Device configuration indicating whether we should avoid using accelerated graphics
+         in certain places to reduce RAM footprint.  This is ignored if ro.config.low_ram
+         is true (in that case this is assumed true as well).  It can allow you to tune down
+         your device's memory use without going to the point of causing applications to turn
+         off features. -->
+    <bool name="config_avoidGfxAccel">false</bool>
+
+    <!-- Device configuration setting the minfree tunable in the lowmemorykiller in the kernel.
+         A high value will cause the lowmemorykiller to fire earlier, keeping more memory
+         in the file cache and preventing I/O thrashing, but allowing fewer processes to
+         stay in memory.  A low value will keep more processes in memory but may cause
+         thrashing if set too low.  Overrides the default value chosen by ActivityManager
+         based on screen size and total memory for the largest lowmemorykiller bucket, and
+         scaled proportionally to the smaller buckets.  -1 keeps the default. -->
+    <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">-1</integer>
+
+    <!-- Device configuration adjusting the minfree tunable in the lowmemorykiller in the
+         kernel.  A high value will cause the lowmemorykiller to fire earlier, keeping more
+         memory in the file cache and preventing I/O thrashing, but allowing fewer processes
+         to stay in memory.  A low value will keep more processes in memory but may cause
+         thrashing if set too low.  Directly added to the default value chosen by
+         ActivityManager based on screen size and total memory for the largest lowmemorykiller
+         bucket, and scaled proportionally to the smaller buckets. 0 keeps the default. -->
+    <integer name="config_lowMemoryKillerMinFreeKbytesAdjust">0</integer>
+
+    <!-- Device configuration setting the /proc/sys/vm/extra_free_kbytes tunable in the kernel
+         (if it exists).  A high value will increase the amount of memory that the kernel
+         tries to keep free, reducing allocation time and causing the lowmemorykiller to kill
+         earlier.  A low value allows more memory to be used by processes but may cause more
+         allocations to block waiting on disk I/O or lowmemorykiller.  Overrides the default
+         value chosen by ActivityManager based on screen size.  0 prevents keeping any extra
+         memory over what the kernel keeps by default.  -1 keeps the default. -->
+    <integer name="config_extraFreeKbytesAbsolute">-1</integer>
+
+    <!-- Device configuration adjusting the /proc/sys/vm/extra_free_kbytes tunable in the kernel
+         (if it exists).  0 uses the default value chosen by ActivityManager.  A positive value
+         will increase the amount of memory that the kernel tries to keep free, reducing
+         allocation time and causing the lowmemorykiller to kill earlier.  A negative value
+         allows more memory to be used by processes but may cause more allocations to block
+         waiting on disk I/O or lowmemorykiller.  Directly added to the default value chosen by
+         ActivityManager based on screen size. -->
+    <integer name="config_extraFreeKbytesAdjust">0</integer>
+
+    <!-- Default insets [LEFT/RIGHTxTOP/BOTTOM] from the screen edge for picture-in-picture windows.
+         These values are in DPs and will be converted to pixel sizes internally. -->
+    <string translatable="false" name="config_defaultPictureInPictureScreenEdgeInsets">16x16</string>
+
+    <!-- The percentage of the screen width to use for the default width or height of
+         picture-in-picture windows. Regardless of the percent set here, calculated size will never
+         be smaller than @dimen/default_minimal_size_pip_resizable_task. -->
+    <item name="config_pictureInPictureDefaultSizePercent" format="float" type="dimen">0.23</item>
+
+    <!-- The default aspect ratio for picture-in-picture windows. -->
+    <item name="config_pictureInPictureDefaultAspectRatio" format="float" type="dimen">1.777778</item>
+
+    <!-- This is the limit for the max and min aspect ratio (1 / this value) at which the min size
+         will be used instead of an adaptive size based loosely on area. -->
+    <item name="config_pictureInPictureAspectRatioLimitForMinSize" format="float" type="dimen">1.777778</item>
+
+    <!-- The default gravity for the picture-in-picture window.
+         Currently, this maps to Gravity.BOTTOM | Gravity.RIGHT -->
+    <integer name="config_defaultPictureInPictureGravity">0x55</integer>
+
+    <!-- The minimum aspect ratio (width/height) that is supported for picture-in-picture.  Any
+         ratio smaller than this is considered too tall and thin to be usable. Currently, this
+         is the inverse of the max landscape aspect ratio (1:2.39), but this is an extremely
+         skinny aspect ratio that is not expected to be widely used. -->
+    <item name="config_pictureInPictureMinAspectRatio" format="float" type="dimen">0.41841004184</item>
+
+    <!-- The minimum aspect ratio (width/height) that is supported for picture-in-picture. Any
+         ratio larger than this is considered to wide and short to be usable. Currently 2.39:1. -->
+    <item name="config_pictureInPictureMaxAspectRatio" format="float" type="dimen">2.39</item>
+
+    <!-- The snap mode to use for picture-in-picture. These values correspond to constants defined
+         in PipSnapAlgorithm and should not be changed independently.
+             0 - Snap to the four corners
+             1 - Snap to the four corners and the mid-points on the long edge in each orientation
+             2 - Snap anywhere along the edge of the screen
+             3 - Snap anywhere along the edge of the screen and magnet to corners
+             4 - Snap to the long edges in each orientation and magnet to corners
+    -->
+    <integer name="config_pictureInPictureSnapMode">4</integer>
+    
 </resources>
