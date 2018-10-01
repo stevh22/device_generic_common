@@ -62,7 +62,7 @@ static const struct thinkpad_ec_row ec_accel_args =
 
 #define HDAPS_INPUT_FUZZ	4	/* input event threshold */
 #define HDAPS_INPUT_FLAT	4
-#define KMACT_REMEMBER_PERIOD   (HZ/10) /* keyboard/mouse persistance */
+#define KMACT_REMEMBER_PERIOD   (HZ/10) /* keyboard/mouse persistence */
 
 /* Input IDs */
 #define HDAPS_INPUT_VENDOR	PCI_VENDOR_ID_IBM
@@ -469,7 +469,11 @@ static void hdaps_calibrate(void)
 /* Timer handler for updating the input device. Runs in softirq context,
  * so avoid lenghty or blocking operations.
  */
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4,15,0)
 static void hdaps_mousedev_poll(unsigned long unused)
+#else
+static void hdaps_mousedev_poll(struct timer_list *unused)
+#endif
 {
 	int ret;
 
@@ -784,6 +788,8 @@ static int __init hdaps_init(void)
 #else
 	init_timer(&hdaps_timer);
 	hdaps_timer.function = hdaps_mousedev_poll;
+#else
+	timer_setup(&hdaps_timer, hdaps_mousedev_poll, 0);
 #endif
 	ret = platform_driver_register(&hdaps_driver);
 	if (ret)

@@ -1007,7 +1007,7 @@ static ssize_t show_battery_group3_voltage(
 static ssize_t show_battery_current_now(
 	struct device *dev, struct device_attribute *attr, char *buf)
 {
-	/* units: mA. SBS spec v1.1 p24: Current() */
+ 	/* units: mA. SBS spec v1.1 p24: Current() */
 	return show_tp_ec_bat_s16(1, 8, 1, 0, attr, buf);
 }
 
@@ -1099,7 +1099,7 @@ static ssize_t show_battery_cycle_count(
 	struct device *dev, struct device_attribute *attr, char *buf)
 {
 	/* units: ordinal. SBS spec v1.1 p32: CycleCount() */
-	return show_tp_ec_bat_u16(2, 12, 1, "", attr, buf);
+	return show_tp_ec_bat_u16(2, 12, 1, "", attr, buf); 
 }
 
 static ssize_t show_battery_temperature(
