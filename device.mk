@@ -94,7 +94,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.com.android.dataroaming=true \
     media.sf.hwaccel=1 \
     media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
+    media.sf.extractor-plugin=libffmpeg_extractor.so \
+    ro.recents.grid=true 
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.arch=x86 \
