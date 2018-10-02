@@ -157,18 +157,18 @@ PRODUCT_COPY_FILES += \
     
 
 # WIDEVINE OVERRIDES 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
-    $(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
-    $(LOCAL_PATH)/lib/mediadrm/libplayreadydrmplugin.so:system/vendor/lib/mediadrm/libplayreadydrmplugin.so \
-    $(LOCAL_PATH)/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
-    $(LOCAL_PATH)/lib/libwvm.so:system/vendor/lib/libwvm.so \
+# PRODUCT_COPY_FILES += \
+#     $(LOCAL_PATH)/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+#     $(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
+#     $(LOCAL_PATH)/lib/mediadrm/libplayreadydrmplugin.so:system/vendor/lib/mediadrm/libplayreadydrmplugin.so \
+#     $(LOCAL_PATH)/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
+#     $(LOCAL_PATH)/lib/libwvm.so:system/vendor/lib/libwvm.so \
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.less-secure=true \
-    drm.service.enabled=true \
-    ro.com.widevine.cachesize=16777216 \
-    media.amplayer.widevineenable=true
+# PRODUCT_PROPERTY_OVERRIDES += \
+#     media.stagefright.less-secure=true \
+#     drm.service.enabled=true \
+#     ro.com.widevine.cachesize=16777216 \
+#     media.amplayer.widevineenable=true
 
 
 PRODUCT_TAGS += dalvik.gc.type-precise
