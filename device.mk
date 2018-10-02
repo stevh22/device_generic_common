@@ -153,16 +153,17 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f))) \
+    x86_installer/bin/Androidx86-Installv26.0003.exe:Androidx86-Installv26.0003.exe \
+    
+
+# WIDEVINE OVERRIDES 
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     $(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
     $(LOCAL_PATH)/lib/mediadrm/libplayreadydrmplugin.so:system/vendor/lib/mediadrm/libplayreadydrmplugin.so \
     $(LOCAL_PATH)/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     $(LOCAL_PATH)/lib/libwvm.so:system/vendor/lib/libwvm.so \
-    x86_installer/bin/Androidx86-Installv26.0003.exe:Androidx86-Installv26.0003.exe \
 
-//    frameworks/base/config/compiled-classes-phone:system/etc/compiled-classes \
-
-# WIDEVINE OVERRIDES
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.less-secure=true \
     drm.service.enabled=true \
