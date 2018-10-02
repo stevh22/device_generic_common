@@ -25,7 +25,7 @@ $(call inherit-product,$(LOCAL_PATH)/device.mk)
 $(call inherit-product,$(LOCAL_PATH)/packages.mk)
 
 # Get a list of languages.
-$(call inherit-product,$(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product,$(SRC_TARGET_DIR)/product/locales_full.mk)
 
 # Get everything else from the parent package
 $(call inherit-product,$(SRC_TARGET_DIR)/product/generic.mk)
