@@ -232,7 +232,7 @@ $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 
 #$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
-#$(call inherit-product, vendor/supersu/vendor_x64.mk)
+$(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
 #$(call inherit-product, vendor/supersu/vendor_x86.mk)
 
 $(call inherit-product, vendor/x86/addon.mk)
