@@ -16,6 +16,7 @@ PRODUCT_PACKAGES := \
     libtxc_dxtn     \
 
 PRODUCT_PACKAGES += \
+    libswiftshader \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
