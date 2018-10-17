@@ -38,13 +38,10 @@ function init_hal_audio()
 		VirtualBox*|Bochs*)
 			[ -d /proc/asound/card0 ] || modprobe snd-sb16 isapnp=0 irq=5
 			;;
-		*)
+		TS10*)
+			set_prop_if_empty hal.audio.out pcmC0D2p
 			;;
 	esac
-
-	if grep -qi "IntelHDMI" /proc/asound/card0/id; then
-		[ -d /proc/asound/card1 ] || set_property ro.hardware.audio.primary hdmi
-	fi
 }
 
 function init_hal_bluetooth()
@@ -148,7 +145,6 @@ function init_hal_gralloc()
 				set_property ro.hardware.hwcomposer drm
 				set_property ro.hardware.gralloc gbm
 			fi
-			set_prop_if_empty sleep.state none
 			;;
 		0*inteldrmfb|0*radeondrmfb|0*nouveaufb|0*svgadrmfb|0*amdgpudrmfb)
 			if [ "$HWACCEL" != "0" ]; then
@@ -185,7 +181,7 @@ function init_hal_power()
 
 	# TODO
 	case "$PRODUCT" in
-		HP*Omni*|OEMB|Surface*3|T10*TA)
+		HP*Omni*|OEMB|Standard*PC*|Surface*3|T10*TA)
 			set_prop_if_empty sleep.state none
 			;;
 		*)
