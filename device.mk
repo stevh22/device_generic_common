@@ -26,55 +26,50 @@ PRODUCT_COPY_FILES += \
 	vendor/bliss/prebuilt/common/etc/init.bliss.rc:system/etc/init/init.bliss.rc
 
 ifeq ($(USE_FOSS),true)
-  $(call inherit-product-if-exists, vendor/foss/foss.mk)
-  
-  # FOSS apps
-	PRODUCT_PACKAGES += \
-		FDroid \
-		FDroidPrivilegedExtension \
-		FakeStore \
-		GmsCore \
-		GsfProxy \
-		MozillaNlpBackend \
-		NominatimNlpBackend \
-		com.google.android.maps \
-  
+$(call inherit-product-if-exists, vendor/foss/foss.mk)
+# FOSS apps
+PRODUCT_PACKAGES += \
+	FDroid \
+	FDroidPrivilegedExtension \
+	FakeStore \
+	GmsCore \
+	GsfProxy \
+	MozillaNlpBackend \
+	NominatimNlpBackend \
+	com.google.android.maps
 endif
 
 
-ifneq ($(USE_OPENGAPPS),false)
-  $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
-	
-  PRODUCT_COPY_FILES += \
-	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera2.xml \
-  	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2015.xml \
-  	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2016.xml \
-	vendor/bliss/config/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2017.xml
+ifeq ($(USE_GO),true)
+DONT_DEXPREOPT_PREBUILTS := true
+$(call inherit-product, build/make/target/product/go_defaults.mk)
+$(call inherit-product, vendor/gapps-go/gapps-go.mk)
+endif
 
-  DEVICE_PACKAGE_OVERLAYS += vendor/bliss/overlay-gapps
-  GAPPS_VARIANT := nano
-  DONT_DEXPREOPT_PREBUILTS := true
-  WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-  GAPPS_FORCE_PACKAGE_OVERRIDES := true
-  GAPPS_FORCE_BROWSER_OVERRIDES := true
-  GAPPS_FORCE_WEBVIEW_OVERRIDES := true
-  PRODUCT_PACKAGES += \
+ifeq ($(USE_OPENGAPPS),true)
+DEVICE_PACKAGE_OVERLAYS += device/generic/common/overlay-gapps
+GAPPS_VARIANT := pico
+DONT_DEXPREOPT_PREBUILTS := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+PRODUCT_PACKAGES += \
 	Chrome \
 	CalculatorGoogle \
-	CalendarGooglePrebuilt \
-	GoogleHome \
-	GoogleTTS \
-	KeyboardGoogle \
-	LatinImeGoogle \
-	phh-overrides \
 	PrebuiltDeskClockGoogle \
+	CalendarGooglePrebuilt \
+	LatinImeGoogle \
+	KeyboardGoogle \
+	phh-overrides \
 	YouTube \
-	Wallpapers \
 	WebViewGoogle \
-	
-  GAPPS_EXCLUDED_PACKAGES := FaceLock \
-	PrebuiltGmsCoreInstantApps \
+	Wallpapers
 
+GAPPS_EXCLUDED_PACKAGES := \
+	FaceLock
+
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 endif
 
 #PRODUCT_PROPERTY_OVERRIDES := \
