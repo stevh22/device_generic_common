@@ -26,7 +26,6 @@ PRODUCT_PACKAGES := \
     LiveWallpapers \
     LiveWallpapersPicker \
     MagicSmokeWallpapers \
-    NotePad \
     PhaseBeam \
     PinyinIME \
     Provision \
@@ -98,6 +97,5 @@ PRODUCT_PACKAGES += \
 
 # Third party apps
 PRODUCT_PACKAGES += \
-    Eleven \
     TSCalibration2 \
     Superuser \
