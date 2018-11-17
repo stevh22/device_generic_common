@@ -121,3 +121,6 @@ on property:persist.sys.nativebridge=1
 
 on property:persist.sys.nativebridge=0
     stop nativebridge
+    
+on property:sys.boot_completed=1
+    chown wifi system /data/misc/wifi
