@@ -108,7 +108,7 @@ DEVICE_MANIFEST_FILE := device/generic/common/manifest.xml
 
 BOARD_SEPOLICY_DIRS += device/generic/common/sepolicy \
                        system/bt/vendor_libs/linux/sepolicy \
-
+SELINUX_IGNORE_NEVERALLOWS := true
 # Vendor Interface Manifest
 # DEVICE_MATRIX_FILE := device/generic/common/compatibility_matrix.xml
 
