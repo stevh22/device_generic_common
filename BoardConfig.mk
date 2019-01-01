@@ -3,6 +3,7 @@
 #
 
 ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5096m
+JAVA_TOOL_OPTIONS := -Dfile.encoding=UTF8
 
 TARGET_BOARD_PLATFORM := android-x86
 
