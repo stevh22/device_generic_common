@@ -180,6 +180,15 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 # Don't dex preopt prebuilt apps that will be updated from Play Store
 DONT_DEXPREOPT_PREBUILTS := true
 
+# Telephony
+PRODUCT_PACKAGES += \
+	telephony-ext
+
+PRODUCT_BOOT_JARS += \
+	telephony-ext
+
+
+
 # Get Android 8.0 HIDL HALs
 $(call inherit-product,$(LOCAL_PATH)/treble.mk)
 
