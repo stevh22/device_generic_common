@@ -41,7 +41,10 @@ ifneq ($(filter efi_img,$(MAKECMDGOALS)),)
 TARGET_KERNEL_ARCH ?= x86_64
 endif
 TARGET_USES_64_BIT_BINDER := true
-TARGET_KERNEL_CLANG_VERSION := 8.0.3
+
+# ifneq ($(KERNEL_VERSION) > 4.15,)
+# BUILD_KERNEL_WITH_CLANG := true
+# endif
 
 BOARD_USES_GENERIC_AUDIO ?= false
 BOARD_USES_ALSA_AUDIO ?= true
@@ -91,6 +94,8 @@ BOARD_GPU_DRIVERS ?= i915 i965 i915g nouveau r300g r600g radeonsi virgl vmwgfx
 ifneq ($(strip $(BOARD_GPU_DRIVERS)),)
 TARGET_HARDWARE_3D := true
 endif
+
+
 
 BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive androidboot.hardware=$(TARGET_PRODUCT) $(if $(filter x86_64,$(TARGET_ARCH) $(TARGET_KERNEL_ARCH)),,vmalloc=192M)
 TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
