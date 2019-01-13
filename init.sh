@@ -41,6 +41,10 @@ function init_hal_audio()
 		TS10*)
 			set_prop_if_empty hal.audio.out pcmC0D2p
 			;;
+		W101SA*)
+			modprobe hdmi_lpe_audio
+			set_prop_if_empty hal.audio.out pcmC0D0p
+			;;
 	esac
 }
 
