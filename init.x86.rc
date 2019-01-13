@@ -8,6 +8,11 @@ on early-init
     export force_s3tc_enable true
     export EGL_LOG_LEVEL info
 #   export EGL_DRIVERS egl_dri2
+	
+	mount debugfs none /sys/kernel/debug mode=0755
+
+    # Needed to fix "Permission Denied" error when using webview
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
 
 on init
 
