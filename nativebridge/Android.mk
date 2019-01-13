@@ -13,6 +13,7 @@ LOCAL_PATH := $(my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libnb
+LOCAL_VENDOR_MODULE := true
 LOCAL_SRC_FILES := src/libnb.cpp
 LOCAL_CFLAGS := -Werror -Wall
 LOCAL_CPPFLAGS := -std=c++11
