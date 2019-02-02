@@ -47,7 +47,6 @@ $(call inherit-product, vendor/gapps-go/gapps-go.mk)
 endif
 
 ifeq ($(USE_OPENGAPPS),true)
-DEVICE_PACKAGE_OVERLAYS += device/generic/common/overlay-gapps
 GAPPS_VARIANT := pico
 DONT_DEXPREOPT_PREBUILTS := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
@@ -61,7 +60,6 @@ PRODUCT_PACKAGES += \
 	CalendarGooglePrebuilt \
 	LatinImeGoogle \
 	KeyboardGoogle \
-	phh-overrides \
 	YouTube \
 	WebViewGoogle \
 	Wallpapers
