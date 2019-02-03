@@ -185,7 +185,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
 	telephony-ext
 
-
+# Build ims-ext-common package
+PRODUCT_PACKAGES += \
+    ims-ext-common
 
 # Get Android 8.0 HIDL HALs
 $(call inherit-product,$(LOCAL_PATH)/treble.mk)
