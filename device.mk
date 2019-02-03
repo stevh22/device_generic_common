@@ -179,15 +179,15 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Telephony
-PRODUCT_PACKAGES += \
-	telephony-ext
+# PRODUCT_PACKAGES += \
+# 	telephony-ext
 
-PRODUCT_BOOT_JARS += \
-	telephony-ext
+# PRODUCT_BOOT_JARS += \
+# 	telephony-ext
 
 # Build ims-ext-common package
-PRODUCT_PACKAGES += \
-    ims-ext-common
+# PRODUCT_PACKAGES += \
+#   ims-ext-common
 
 # Get Android 8.0 HIDL HALs
 $(call inherit-product,$(LOCAL_PATH)/treble.mk)
