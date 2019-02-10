@@ -24,7 +24,7 @@
 CC=gcc
 CFLAGS=-c -Wall -O2
 #LDFLAGS=-lncurses
-SOURCES=ipts-mei.c ipts-hid.c ipts-msg-handler.c ipts-kernel.c ipts-resource.c ipts-gfx.c ipts-dbgfs.c
+SOURCES=intel-ipts.c ipts-mei.c ipts-hid.c ipts-msg-handler.c ipts-kernel.c ipts-resource.c ipts-gfx.c ipts-dbgfs.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=intel-ipts
 
