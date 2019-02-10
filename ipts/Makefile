@@ -4,18 +4,37 @@
 #
 
 # obj-$(CONFIG_INTEL_IPTS)+= intel-ipts.o
-obj-m += intel-ipts.o
+# obj-m += intel-ipts.o
 
-intel-ipts-objs += ipts-mei.o
-intel-ipts-objs += ipts-hid.o
-intel-ipts-objs += ipts-msg-handler.o
-intel-ipts-objs += ipts-kernel.o
-intel-ipts-objs += ipts-resource.o
-intel-ipts-objs += ipts-gfx.o
-intel-ipts-$(CONFIG_DEBUG_FS) += ipts-dbgfs.o
+# intel-ipts-objs += ipts-mei.o
+# intel-ipts-objs += ipts-hid.o
+# intel-ipts-objs += ipts-msg-handler.o
+# intel-ipts-objs += ipts-kernel.o
+# intel-ipts-objs += ipts-resource.o
+# intel-ipts-objs += ipts-gfx.o
+# intel-ipts-$(CONFIG_DEBUG_FS) += ipts-dbgfs.o
 
-all:
-	make -C $(KERNEL_BUILD_DIR) M=$(PWD) modules
+# all:
+# 	make -C $(KERNEL_BUILD_DIR) M=$(PWD) modules
+
+# clean:
+# 	make -C $(KERNEL_BUILD_DIR) M=$(PWD) clean
+
+
+CC=gcc
+CFLAGS=-c -Wall -O2
+#LDFLAGS=-lncurses
+SOURCES=ipts-mei.c ipts-hid.c ipts-msg-handler.c ipts-kernel.c ipts-resource.c ipts-gfx.c ipts-dbgfs.c
+OBJECTS=$(SOURCES:.c=.o)
+EXECUTABLE=intel-ipts
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	make -C $(KERNEL_BUILD_DIR) M=$(PWD) clean
+	rm $(OBJECTS) $(EXECUTABLE)
