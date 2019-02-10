@@ -42,6 +42,10 @@ TARGET_KERNEL_ARCH ?= x86_64
 endif
 TARGET_USES_64_BIT_BINDER := true
 
+ifeq ($(USE_IPTS),true)
+TARGET_EXTRA_KERNEL_MODULES += intel_ipts
+endif
+
 # ifneq ($(KERNEL_VERSION) > 4.15,)
 # BUILD_KERNEL_WITH_CLANG := true
 # endif
