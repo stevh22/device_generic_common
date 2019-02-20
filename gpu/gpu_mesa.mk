@@ -14,6 +14,8 @@ PRODUCT_PACKAGES := \
     gralloc.gbm     \
     libGLES_mesa    \
     libtxc_dxtn     \
+    libdrm 			\
+    gralloc.minigbm \
 
 PRODUCT_PACKAGES += \
     libswiftshader \
@@ -21,7 +23,8 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
     vulkan.android-x86 \
-    vulkan.radv
+    vulkan.radv	\
+    vulkan.anv \
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.opengles.version = 196608 \
@@ -30,4 +33,5 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
-    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:system/etc/permissions/android.hardware.vulkan.version.xml \
+    
