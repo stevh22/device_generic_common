@@ -27,6 +27,8 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(USE_FOSS),true)
 $(call inherit-product-if-exists, vendor/foss/foss.mk)
+# Get GMS
+$(call inherit-product-if-exists,vendor/microg/microg.mk)
 # FOSS apps
 PRODUCT_PACKAGES += \
 	FDroid \
