@@ -51,3 +51,5 @@ $(call add-clean-step, rm -f $(TARGET_OUT_VENDOR)/lib*/hw/android.hardware.bluet
 
 # Migrate to versioned VNDK directory layout
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/lib/vndk-sp)
+
+$(call add-clean-step, rm -rf $(TARGET_OUT_APPS)/AndroidTerm)
