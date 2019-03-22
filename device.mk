@@ -35,10 +35,16 @@ PRODUCT_PACKAGES += \
 	FDroidPrivilegedExtension \
 	FakeStore \
 	GmsCore \
+	privapp-permissions-com.google.android.gms.xml \
 	GsfProxy \
 	MozillaNlpBackend \
 	NominatimNlpBackend \
-	com.google.android.maps
+	com.google.android.maps \
+	com.google.android.maps.jar \
+	com.google.android.maps.xml \
+	OpenWeatherMapWeatherProvider \
+	additional_repos.xml \
+	FoilGuard 
 endif
 
 
