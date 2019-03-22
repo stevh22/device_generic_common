@@ -44,7 +44,6 @@ PRODUCT_PACKAGES += \
 	com.google.android.maps.xml \
 	OpenWeatherMapWeatherProvider \
 	additional_repos.xml \
-	FoilGuard 
 endif
 
 
