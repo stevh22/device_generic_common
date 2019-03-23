@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
 	com.google.android.maps.jar \
 	com.google.android.maps.xml \
 	OpenWeatherMapWeatherProvider \
-	additional_repos.xml \
+	additional_repos.xml
+    
 endif
 
 
