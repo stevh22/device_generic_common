@@ -117,12 +117,12 @@ WITH_BLISS_CHARGER := false
 TARGET_PC_BUILD := true
 
 # Bliss OS specific 
-VER := 11.4
+VER := 11.7
 RELEASE_OS_TITLE := Bliss-OS 
 BLISS_BUILD := bliss-x86
 BUILD_NAME_VARIANT := bliss-x86 
 INSTALL_PREFIX := bliss-x86-$(VER) 
-PREV_VERS := bliss-x86-6.4 bliss-x86-7.1.2 bliss-x86-8.0 bliss-x86-10.0 bliss-x86-10.1 bliss-x86-11.0
+PREV_VERS := bliss-x86-6.4 bliss-x86-7.1.2 bliss-x86-8.0 bliss-x86-10.0 bliss-x86-10.1 bliss-x86-11.0 bliss-x86-11.1 bliss-x86-11.2 bliss-x86-11.3 bliss-x86-11.4 bliss-x86-11.5 bliss-x86-11.6 
 BLISS_VERSION_MAINTENANCE := Stable-Dev
 BLISSIFY := true
 BLISS_GRAPHITE := true
