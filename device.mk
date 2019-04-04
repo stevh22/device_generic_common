@@ -230,6 +230,10 @@ $(call inherit-product-if-exists,vendor/google/gapps.mk)
 # Include Google Apps
 $(call inherit-product-if-exists,vendor/google/gapps/gapps.mk)
 
+# Include Google Apps
+$(call inherit-product-if-exists,vendor/gapps/common/common-vendor.mk)
+$(call inherit-product-if-exists,vendor/gapps/x86/x86-vendor.mk)
+
 # Get PixelGapps
 # $(call inherit-product-if-exists,vendor/pixelgapps/pixel-gapps.mk)
 
