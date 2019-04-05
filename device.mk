@@ -155,10 +155,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f))) \
-    x86_installer/bin/Androidx86-Installv26.0003.exe:Androidx86-Installv26.0003.exe \
-    
+    x86_installer/bin/Androidx86-Installv26.0003.exe:Androidx86-Installv26.0003.exe 
 
-# WIDEVINE OVERRIDES 
+# WIDEVINE OVERRIDES
 # PRODUCT_COPY_FILES += \
 #     $(LOCAL_PATH)/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
 #     $(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
@@ -230,8 +229,7 @@ $(call inherit-product-if-exists,vendor/google/gapps.mk)
 # Include Google Apps
 $(call inherit-product-if-exists,vendor/google/gapps/gapps.mk)
 
-# Include Google Apps
-$(call inherit-product-if-exists,vendor/gapps/common/common-vendor.mk)
+# Include MindTheGapps Apps
 $(call inherit-product-if-exists,vendor/gapps/x86/x86-vendor.mk)
 
 # Get PixelGapps
