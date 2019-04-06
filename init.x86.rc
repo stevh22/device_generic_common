@@ -48,8 +48,6 @@ on boot
     setprop sys.media.vdec.drop 0
     # some custom settings
     settings put global enable_freeform_support 1
-    settings put global op_voice_recording_supported_by_mcc 1
-    setprop wifi.interface wlan0
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant -dd \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
@@ -123,6 +121,3 @@ on property:persist.sys.nativebridge=1
 
 on property:persist.sys.nativebridge=0
     stop nativebridge
-    
-on property:sys.boot_completed=1
-    chown wifi system /data/misc/wifi
