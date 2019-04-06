@@ -41,15 +41,7 @@ function init_hal_audio()
 		TS10*)
 			set_prop_if_empty hal.audio.out pcmC0D2p
 			;;
-		W101SA*)
-			modprobe hdmi_lpe_audio
-			set_prop_if_empty hal.audio.out pcmC0D0p
-			;;
 	esac
-	
-	if grep -qi "IntelHDMI" /proc/asound/card0/id; then
-		[ -d /proc/asound/card1 ] || set_property ro.hardware.audio.primary hdmi
-	fi
 }
 
 function init_hal_bluetooth()
