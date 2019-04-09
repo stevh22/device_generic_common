@@ -82,7 +82,7 @@ TARGET_USES_HWC2 ?= true
 
 USE_CAMERA_STUB ?= false
 
-SUPERUSER_EMBEDDED := false
+SUPERUSER_EMBEDDED := true
 #SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # This enables the wpa wireless driver
