@@ -178,4 +178,13 @@
     -->
     <integer name="config_pictureInPictureSnapMode">4</integer>
     
+    <!-- Define a few different options in the GlobalActions list -->
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>power</item>
+        <item>restart</item>
+        <item>sleep</item>
+        <item>screenshot</item>
+        <item>users</item>
+    </string-array>
+    
 </resources>
