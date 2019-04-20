@@ -82,6 +82,36 @@ GAPPS_EXCLUDED_PACKAGES := \
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 endif
 
+ifeq ($(USE_GMS),true)
+
+# Get GMS
+$(call inherit-product-if-exists,vendor/google/products/gms.mk)
+
+# Get GMS
+$(call inherit-product-if-exists,vendor/google/gapps.mk)
+
+# Include Google Apps
+$(call inherit-product-if-exists,vendor/google/gapps/gapps.mk)
+
+PRODUCT_PACKAGES += \
+	GmsCore \
+	privapp-permissions-com.google.android.gms.xml \
+	GsfProxy \
+	MozillaNlpBackend \
+	NominatimNlpBackend \
+	com.google.android.maps \
+	com.google.android.maps.jar \
+	com.google.android.maps.xml \
+	OpenWeatherMapWeatherProvider \
+	additional_repos.xml \
+	GoogleServicesFramework \
+	GoogleContactsSyncAdapter \
+	PlayGames \
+	Vending \
+	GoogleLoginService \
+    
+endif
+
 #PRODUCT_PROPERTY_OVERRIDES := \
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 #    ro.config.notification_sound=Krypton.ogg \
@@ -224,30 +254,14 @@ $(call inherit-product-if-exists,hardware/libsensors/sensors.mk)
 # Get tablet dalvik parameters
 $(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
-# Get GMS
-$(call inherit-product-if-exists,vendor/google/products/gms.mk)
-
-# Get GMS
-$(call inherit-product-if-exists,vendor/google/gapps.mk)
-
-# Include Google Apps
-$(call inherit-product-if-exists,vendor/google/gapps/gapps.mk)
-
-# Get PixelGapps
-# $(call inherit-product-if-exists,vendor/pixelgapps/pixel-gapps.mk)
-
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
-
-# $(call inherit-product-if-exists, vendor/foss/foss.mk)
 
 # Get proprietary files if any exists
 $(call inherit-product-if-exists,vendor/bliss_priv/device-vendor.mk)
 
 # Get native bridge settings
 #$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
-
-#$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
 $(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
 #$(call inherit-product, vendor/supersu/vendor_x86.mk)
