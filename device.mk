@@ -230,6 +230,10 @@ DONT_DEXPREOPT_PREBUILTS := true
 # PRODUCT_PACKAGES += \
 #   ims-ext-common
 
+# Enable MultiWindow
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.debug.multi_window=true
+
 # Get Android 8.0 HIDL HALs
 $(call inherit-product,$(LOCAL_PATH)/treble.mk)
 
