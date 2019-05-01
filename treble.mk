@@ -36,7 +36,9 @@ PRODUCT_PACKAGES += \
 
 # Health HAL
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl
+    android.hardware.health@2.0-service.celadon
+#    android.hardware.health@2.0-impl
+
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -54,8 +56,11 @@ PRODUCT_PACKAGES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power@1.2-impl \
+    android.hardware.power@1.2-service
+# PRODUCT_PACKAGES += \
+#    android.hardware.power@1.0-impl \
+#    android.hardware.power@1.0-service
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
