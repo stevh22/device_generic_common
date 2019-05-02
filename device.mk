@@ -135,6 +135,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     ro.arch=x86 \
     persist.rtc_local_time=1 \
 
+# Ethernet
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.eth0.startonboot=1
+   
 PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)init.rc),$(PRODUCT_DIR)init.rc:root/init.rc) \
     $(if $(wildcard $(PRODUCT_DIR)init.sh),$(PRODUCT_DIR),$(LOCAL_PATH)/)init.sh:system/etc/init.sh \
