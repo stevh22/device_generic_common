@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-impl \
     android.hardware.dumpstate@1.0-service
+    
+# Configstore HAL
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.0-impl
 
 # Gatekeeper HAL
 #PRODUCT_PACKAGES += \
