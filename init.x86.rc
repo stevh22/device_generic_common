@@ -30,6 +30,34 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
+	write /sys/devices/platform/INT33BB:00/power/control on
+    write /sys/devices/pci0000\:00/0000\:00\:02.0/power/control auto
+    
+    setprop camera.disable_zsl_mode 1
+    
+    chmod 0660 /sys/class/tty/ttyHSU1/../../power/control
+    chown system system /sys/class/tty/ttyHSU1/../../power/control
+    mkdir /dev/gps 0770 gps system
+    symlink /dev/ttyHSU1 /dev/gps/ttyGPS
+    symlink /sys/class/tty/ttyHSU1/../../power/control /dev/gps/ttyGPSPowerControl
+    
+    # change group for IPC interfaces
+    chown root system /sys/devices/pci0000:00/0000:00:14.0/power/control
+    chmod 0664 /sys/devices/pci0000:00/0000:00:14.0/power/control
+    chown root system /sys/bus/usb/devices/2-0:1.0/port5/power/pm_qos_no_power_off
+    chmod 0664 /sys/bus/usb/devices/2-0:1.0/port5/power/pm_qos_no_power_off
+    chown root system /sys/devices/pci0000:00/0000:00:14.0/usb2/2-5/power/wakeup
+    chmod 0664 /sys/devices/pci0000:00/0000:00:14.0/usb2/2-5/power/wakeup
+    chown root system /sys/devices/pci0000:00/0000:00:14.0/ssic_port_enable
+    chmod 0664 /sys/devices/pci0000:00/0000:00:14.0/power/ssic_port_enable
+
+    chown root system /sys/bus/usb/devices/2-0:1.0/port5/usb3_lpm
+    chmod 0664 /sys/bus/usb/devices/2-0:1.0/port5/usb3_lpm
+
+    # disable HSIC port
+    write /sys/bus/usb/devices/1-0:1.0/port6/power/pm_qos_no_power_off 0
+
+    
     setprop ro.radio.use-ppp yes
     setprop status.battery.state Slow
     setprop status.battery.level 5
