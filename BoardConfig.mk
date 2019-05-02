@@ -98,7 +98,7 @@ endif
 
 
 
-BOARD_KERNEL_CMDLINE := root=/dev/ram0 androidboot.selinux=permissive androidboot.hardware=$(TARGET_PRODUCT) $(if $(filter x86_64,$(TARGET_ARCH) $(TARGET_KERNEL_ARCH)),,vmalloc=192M)
+BOARD_KERNEL_CMDLINE := root=/dev/ram0 enforcing=0 androidboot.selinux=permissive androidboot.hardware=$(TARGET_PRODUCT) $(if $(filter x86_64,$(TARGET_ARCH) $(TARGET_KERNEL_ARCH)),,vmalloc=192M)
 TARGET_KERNEL_DIFFCONFIG := device/generic/common/selinux_diffconfig
 
 COMPATIBILITY_ENHANCEMENT_PACKAGE := true
