@@ -35,8 +35,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl
 
 # Health HAL
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service.celadon
+PRODUCT_PACKAGES += health
+PRODUCT_PACKAGES += health.$(TARGET_BOARD_PLATFORM) \
+					android.hardware.health@2.0-service.celadon
 #    android.hardware.health@2.0-impl
 
 
@@ -55,9 +56,12 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
 # Power HAL
+PRODUCT_PACKAGES += power.project-celadon \
+    power.$(TARGET_BOARD_PLATFORM)
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-impl \
     android.hardware.power@1.2-service
+
 # PRODUCT_PACKAGES += \
 #    android.hardware.power@1.0-impl \
 #    android.hardware.power@1.0-service
@@ -70,7 +74,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
 
-# USB HAL
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
+
+# usb accessory
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
+    
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-impl \
     android.hardware.usb@1.0-service
