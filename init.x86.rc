@@ -76,6 +76,19 @@ on boot
     setprop sys.media.vdec.drop 0
     # some custom settings
     settings put global enable_freeform_support 1
+    
+on early-init
+    # Mount debugfs and make it writable so that debuggerd can
+    # create stack traces, required with newer kernels
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
+on early-boot
+    # Needed by surfaceflinger to enable it to open trace_marker
+    # on start without file permissions error.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+    # tracefs is mounted after 1st access to it
+    chmod 0755 /sys/kernel/debug/tracing
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant -dd \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
