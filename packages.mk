@@ -101,3 +101,5 @@ PRODUCT_PACKAGES += \
     TSCalibration2 \
     Superuser \
     nano
+
+PRODUCT_PACKAGES +=  phh-su me.phh.superuser
