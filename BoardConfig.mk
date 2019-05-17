@@ -46,6 +46,22 @@ TARGET_USES_64_BIT_BINDER := true
 # BUILD_KERNEL_WITH_CLANG := true
 # endif
 
+
+ifeq ($(USE_MAGISK),true)
+B_MAGISK ?= true
+B_INIT ?= true
+BB_INIT ?= true
+B_BOOT ?= true 
+B_BB ?= true
+
+PRODUCT_PACKAGES += \
+	magisk \
+	magiskinit \
+	magiskboot \
+	busybox
+    
+endif
+
 BOARD_USES_GENERIC_AUDIO ?= false
 BOARD_USES_ALSA_AUDIO ?= true
 BUILD_WITH_ALSA_UTILS ?= true
