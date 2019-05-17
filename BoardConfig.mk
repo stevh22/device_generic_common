@@ -58,7 +58,10 @@ PRODUCT_PACKAGES += \
 	magisk \
 	magiskinit \
 	magiskboot \
-	busybox
+	busybox \
+	libsystemproperties \
+	libutils \
+	resetprop \
     
 endif
 
