@@ -49,8 +49,8 @@ TARGET_USES_64_BIT_BINDER := true
 
 ifeq ($(USE_MAGISK),true)
 B_MAGISK ?= true
-B_INIT ?= true
-BB_INIT ?= true
+B_INIT64 ?= true
+# BB_INIT ?= true
 B_BOOT ?= true 
 B_BB ?= true
 
