@@ -112,6 +112,11 @@ PRODUCT_PACKAGES += \
     
 endif
 
+ifeq ($(USE_MAGISK),true)
+$(call inherit-product, vendor/magisk/magisk.mk)
+    
+endif
+
 #PRODUCT_PROPERTY_OVERRIDES := \
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 #    ro.config.notification_sound=Krypton.ogg \
