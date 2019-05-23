@@ -117,6 +117,19 @@ $(call inherit-product, vendor/magisk/magisk.mk)
     
 endif
 
+ifeq ($(USE_SUPERSU),true)
+ifeq ($(TARGET_ARCH),x86_64)
+$(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
+endif
+ifeq ($(TARGET_ARCH),x86)
+$(call inherit-product, vendor/supersu/vendor_x86.mk)
+endif
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/su/init.superuser.rc:root/init.superuser.rc
+
+endif
+
 #PRODUCT_PROPERTY_OVERRIDES := \
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 #    ro.config.notification_sound=Krypton.ogg \
@@ -272,6 +285,4 @@ $(call inherit-product-if-exists,vendor/bliss_priv/device-vendor.mk)
 # Get native bridge settings
 #$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 
-$(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
-#$(call inherit-product, vendor/supersu/vendor_x86.mk)
 
