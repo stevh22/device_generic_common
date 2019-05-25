@@ -26,8 +26,8 @@ $(call inherit-product, vendor/x86/addon.mk)
 # Include MindTheGapps Apps
 $(call inherit-product-if-exists, vendor/gapps/x86/x86-vendor.mk)
 
-PRODUCT_COPY_FILES += \
-	vendor/bliss/prebuilt/common/etc/init.bliss.rc:system/etc/init/init.bliss.rc
+#PRODUCT_COPY_FILES += \
+#	vendor/bliss/prebuilt/common/etc/init.bliss.rc:system/etc/init/init.bliss.rc
 
 ifeq ($(USE_FOSS),true)
 $(call inherit-product-if-exists, vendor/foss/foss.mk)
@@ -155,6 +155,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 
 PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)init.rc),$(PRODUCT_DIR)init.rc:root/init.rc) \
+    $(if $(wildcard $(PRODUCT_DIR)init.bliss.rc),$(PRODUCT_DIR)init.bliss.rc:/system/etc/init/init.bliss.rc) \
     $(if $(wildcard $(PRODUCT_DIR)init.sh),$(PRODUCT_DIR),$(LOCAL_PATH)/)init.sh:system/etc/init.sh \
     $(if $(wildcard $(PRODUCT_DIR)modules.blacklist),$(PRODUCT_DIR),$(LOCAL_PATH)/)modules.blacklist:system/etc/modules.blacklist \
     $(if $(wildcard $(PRODUCT_DIR)fstab.$(TARGET_PRODUCT)),$(PRODUCT_DIR)fstab.$(TARGET_PRODUCT),$(LOCAL_PATH)/fstab.x86):root/fstab.$(TARGET_PRODUCT) \
@@ -163,6 +164,9 @@ PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)excluded-input-devices.xml),$(PRODUCT_DIR),$(LOCAL_PATH)/)excluded-input-devices.xml:system/etc/excluded-input-devices.xml \
     $(if $(wildcard $(PRODUCT_DIR)init.$(TARGET_PRODUCT).rc),$(PRODUCT_DIR)init.$(TARGET_PRODUCT).rc,$(LOCAL_PATH)/init.x86.rc):root/init.$(TARGET_PRODUCT).rc \
     $(if $(wildcard $(PRODUCT_DIR)ueventd.$(TARGET_PRODUCT).rc),$(PRODUCT_DIR)ueventd.$(TARGET_PRODUCT).rc,$(LOCAL_PATH)/ueventd.x86.rc):root/ueventd.$(TARGET_PRODUCT).rc \
+
+$(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
+$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ppp/ip-up:system/etc/ppp/ip-up \
