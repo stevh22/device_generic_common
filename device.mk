@@ -118,11 +118,10 @@ $(call inherit-product, vendor/magisk/magisk.mk)
 endif
 
 ifeq ($(USE_SUPERSU),true)
-ifeq ($(TARGET_ARCH),x86_64)
-$(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
-endif
 ifeq ($(TARGET_ARCH),x86)
 $(call inherit-product, vendor/supersu/vendor_x86.mk)
+else
+$(call inherit-product, vendor/supersu/vendor_x64.mk)
 endif
 
 PRODUCT_COPY_FILES += \
