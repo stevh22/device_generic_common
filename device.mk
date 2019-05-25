@@ -155,7 +155,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 
 PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)init.rc),$(PRODUCT_DIR)init.rc:root/init.rc) \
-    $(if $(wildcard $(PRODUCT_DIR)init.bliss.rc),$(PRODUCT_DIR)init.bliss.rc:/system/etc/init/init.bliss.rc) \
     $(if $(wildcard $(PRODUCT_DIR)init.sh),$(PRODUCT_DIR),$(LOCAL_PATH)/)init.sh:system/etc/init.sh \
     $(if $(wildcard $(PRODUCT_DIR)modules.blacklist),$(PRODUCT_DIR),$(LOCAL_PATH)/)modules.blacklist:system/etc/modules.blacklist \
     $(if $(wildcard $(PRODUCT_DIR)fstab.$(TARGET_PRODUCT)),$(PRODUCT_DIR)fstab.$(TARGET_PRODUCT),$(LOCAL_PATH)/fstab.x86):root/fstab.$(TARGET_PRODUCT) \
@@ -167,6 +166,12 @@ PRODUCT_COPY_FILES := \
 
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
 $(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+
+$(foreach f,$(wildcard vendor/bliss/prebuilt/common/bin/*),\
+$(eval PRODUCT_COPY_FILES += $(f):system/bin/$(notdir $f)))
+
+$(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init.d/*),\
+$(eval PRODUCT_COPY_FILES += $(f):system/etc/init.d/$(notdir $f)))
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ppp/ip-up:system/etc/ppp/ip-up \
