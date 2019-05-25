@@ -167,6 +167,9 @@ PRODUCT_COPY_FILES := \
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
 $(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
+$(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/init.*.rc),\
+$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir init.$f)))
+
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/bin/*),\
 $(eval PRODUCT_COPY_FILES += $(f):system/bin/$(notdir $f)))
 
