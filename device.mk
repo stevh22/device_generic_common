@@ -163,12 +163,11 @@ PRODUCT_COPY_FILES := \
     $(if $(wildcard $(PRODUCT_DIR)excluded-input-devices.xml),$(PRODUCT_DIR),$(LOCAL_PATH)/)excluded-input-devices.xml:system/etc/excluded-input-devices.xml \
     $(if $(wildcard $(PRODUCT_DIR)init.$(TARGET_PRODUCT).rc),$(PRODUCT_DIR)init.$(TARGET_PRODUCT).rc,$(LOCAL_PATH)/init.x86.rc):root/init.$(TARGET_PRODUCT).rc \
     $(if $(wildcard $(PRODUCT_DIR)ueventd.$(TARGET_PRODUCT).rc),$(PRODUCT_DIR)ueventd.$(TARGET_PRODUCT).rc,$(LOCAL_PATH)/ueventd.x86.rc):root/ueventd.$(TARGET_PRODUCT).rc \
+    $(if $(wildcard vendor/bliss/prebuilt/common/etc/init.bliss.rc),vendor/bliss/prebuilt/common/etc/init.bliss.rc:root/init.bliss.rc) \
+    $(if $(wildcard vendor/bliss/prebuilt/common/etc/init.blissupdater.rc),vendor/bliss/prebuilt/common/etc/init.blissupdater.rc:system/etc/init/init.blissupdater.rc) \
 
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/*.rc),\
 $(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
-
-$(foreach f,$(wildcard vendor/bliss/prebuilt/common/etc/init/init.*.rc),\
-$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir init.$f)))
 
 $(foreach f,$(wildcard vendor/bliss/prebuilt/common/bin/*),\
 $(eval PRODUCT_COPY_FILES += $(f):system/bin/$(notdir $f)))
