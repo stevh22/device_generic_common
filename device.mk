@@ -20,7 +20,7 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Inherit some common Bliss stuff.
-$(call inherit-product, vendor/bliss/config/common.mk)
+#~ $(call inherit-product, vendor/bliss/config/common.mk)
 $(call inherit-product, vendor/x86/addon.mk)
 
 # Include MindTheGapps Apps
@@ -256,7 +256,7 @@ $(call inherit-product-if-exists,$(LOCAL_PATH)/gpu/gpu_mesa.mk)
 $(call inherit-product-if-exists,hardware/libsensors/sensors.mk)
 
 # Get tablet dalvik parameters
-$(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+#~ $(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
