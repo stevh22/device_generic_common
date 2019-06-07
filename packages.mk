@@ -59,6 +59,7 @@ PRODUCT_PACKAGES := \
     v86d \
     wacom-input \
     SuperSU \
+    Launcher3 \
 
 PRODUCT_PACKAGES += \
     libwpa_client \
