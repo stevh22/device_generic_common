@@ -19,10 +19,6 @@ TARGET_SCREEN_HEIGHT := 1080
 TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
-# Inherit some common Bliss stuff.
-$(call inherit-product, vendor/bliss/config/common.mk)
-$(call inherit-product, vendor/x86/addon.mk)
-
 # Include MindTheGapps Apps
 $(call inherit-product-if-exists, vendor/gapps/x86/x86-vendor.mk)
 
@@ -249,6 +245,11 @@ DONT_DEXPREOPT_PREBUILTS := true
 # Enable MultiWindow
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.debug.multi_window=true
+
+
+# Inherit some common Bliss stuff.
+$(call inherit-product, vendor/bliss/config/common.mk)
+$(call inherit-product, vendor/x86/addon.mk)
 
 # Get Android 8.0 HIDL HALs
 $(call inherit-product,$(LOCAL_PATH)/treble.mk)
