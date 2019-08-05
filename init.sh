@@ -184,12 +184,22 @@ function init_hal_gralloc()
 			if [ "$HWACCEL" != "0" ]; then
 				set_property ro.hardware.hwcomposer ${HWC:-drm}
 				set_property ro.hardware.gralloc ${GRALLOC:-gbm}
+				start vendor.hwcomposer-2-1
 				set_property debug.drm.mode.force ${video:-1280x800}
 			fi
 			;;
-		0*inteldrmfb|0*radeondrmfb|0*nouveaufb|0*svgadrmfb|0*amdgpudrmfb)
+		0*i915drmfb|0*inteldrmfb)
 			if [ "$HWACCEL" != "0" ]; then
-				set_property ro.hardware.gralloc ${GRALLOC:-drm}
+				set_property ro.hardware.hwcomposer ${HWC:-intel}
+				set_property ro.hardware.gralloc ${GRALLOC:-intel}
+				start vendor.hwcomposer-2-1
+				set_drm_mode
+			fi
+			;;
+		0*radeondrmfb|0*nouveau*|0*svgadrmfb|0*amdgpudrmfb)
+			if [ "$HWACCEL" != "0" ]; then
+				set_property ro.hardware.gralloc ${GRALLOC:-gbm}
+				start vendor.hwcomposer-2-1.drmfb
 				set_drm_mode
 			fi
 			;;
