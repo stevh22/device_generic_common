@@ -32,3 +32,6 @@ $(call inherit-product,$(SRC_TARGET_DIR)/product/generic.mk)
 
 # Get some sounds
 $(call inherit-product-if-exists,frameworks/base/data/sounds/AudioPackage6.mk)
+
+$(call inherit-product-if-exists, vendor/supersu/vendor_x86.mk)
+

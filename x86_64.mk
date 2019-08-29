@@ -16,3 +16,4 @@
 
 $(call inherit-product,$(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product,$(LOCAL_PATH)/x86.mk)
+$(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
