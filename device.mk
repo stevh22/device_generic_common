@@ -226,8 +226,6 @@ PRODUCT_SHIPPING_API_LEVEL := 19
 PRODUCT_AAPT_CONFIG := normal large xlarge mdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
-
 # Don't dex preopt prebuilt apps that will be updated from Play Store
 DONT_DEXPREOPT_PREBUILTS := true
 
@@ -286,4 +284,9 @@ $(call inherit-product-if-exists,vendor/bliss_priv/device-vendor.mk)
 
 $(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
 #$(call inherit-product, vendor/supersu/vendor_x86.mk)
+
+# Local overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 
