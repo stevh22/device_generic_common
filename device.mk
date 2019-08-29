@@ -282,9 +282,6 @@ $(call inherit-product-if-exists,vendor/bliss_priv/device-vendor.mk)
 # Get native bridge settings
 #$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 
-$(call inherit-product-if-exists, vendor/supersu/vendor_x64.mk)
-#$(call inherit-product, vendor/supersu/vendor_x86.mk)
-
 # Local overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
