@@ -13,12 +13,17 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 
 KERNEL_DIR ?= kernel
 
-ifneq ($(filter x86%,$(TARGET_ARCH)),)
-TARGET_KERNEL_ARCH ?= $(TARGET_ARCH)
+ifeq ($(KERNEL_ARCH),x86_64)
+TARGET_KERNEL_ARCH ?= x86_64
 KERNEL_TARGET := bzImage
-TARGET_KERNEL_CONFIG ?= android-$(TARGET_KERNEL_ARCH)_defconfig
 KERNEL_CONFIG_DIR := arch/x86/configs
+TARGET_KERNEL_CONFIG ?= android-x86_64_defconfig
+else
+TARGET_KERNEL_ARCH ?= x86
+KERNEL_CONFIG_DIR := arch/x86/configs
+TARGET_KERNEL_CONFIG ?= android-x86_defconfig
 endif
+
 ifeq ($(TARGET_ARCH),arm)
 KERNEL_TARGET := zImage
 TARGET_KERNEL_CONFIG ?= goldfish_defconfig
