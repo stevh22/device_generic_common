@@ -77,7 +77,6 @@ PRODUCT_PACKAGES += \
     make_f2fs \
     mkfs.exfat \
     mkntfs \
-    mksquashfs \
     mount.exfat \
     ntfs-3g \
     ntfsfix \
@@ -96,6 +95,9 @@ PRODUCT_PACKAGES += \
 #    libffmpeg_extractor \
 #    libffmpeg_omx \
 #    media_codecs_ffmpeg.xml
+
+PRODUCT_HOST_PACKAGES += \
+    mksquashfs \
 
 # Third party apps
 PRODUCT_PACKAGES += \

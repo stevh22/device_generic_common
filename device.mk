@@ -247,6 +247,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Inherit some common Bliss stuff.
 $(call inherit-product, vendor/bliss/config/common.mk)
+# $(call inherit-product, vendor/bliss/config/BoardConfigBliss.mk)
 $(call inherit-product, vendor/x86/addon.mk)
 
 # Get Android 8.0 HIDL HALs
@@ -277,7 +278,7 @@ $(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-hea
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
 
 # Get proprietary files if any exists
-$(call inherit-product-if-exists,vendor/bliss_priv/device-vendor.mk)
+#$(call inherit-product-if-exists,vendor/bliss_priv/device-vendor.mk)
 
 # Get native bridge settings
 #$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
