@@ -8,6 +8,46 @@
 #      http://www.apache.org/licenses/LICENSE-2.0
 #
 
+# Android makefile to build kernel as a part of Android Build
+#
+# Configuration
+# =============
+#
+# These config vars are usually set in BoardConfig.mk:
+#
+#   TARGET_KERNEL_CONFIG               = Kernel defconfig
+#   TARGET_KERNEL_VARIANT_CONFIG       = Variant defconfig, optional
+#   TARGET_KERNEL_SELINUX_CONFIG       = SELinux defconfig, optional
+#   TARGET_KERNEL_ADDITIONAL_CONFIG    = Additional defconfig, optional
+#
+#   TARGET_KERNEL_CLANG_COMPILE        = Compile kernel with clang, defaults to false
+#
+#   TARGET_KERNEL_CLANG_VERSION        = Clang prebuilts version, optional, defaults to clang-stable
+#
+#   TARGET_KERNEL_CLANG_PATH           = Clang prebuilts path, optional
+#
+#   BOARD_KERNEL_IMAGE_NAME            = Built image name
+#                                          for ARM use: zImage
+#                                          for ARM64 use: Image.gz
+#                                          for uncompressed use: Image
+#                                          If using an appended DT, append '-dtb'
+#                                          to the end of the image name.
+#                                          For example, for ARM devices,
+#                                          use zImage-dtb instead of zImage.
+#
+#   KERNEL_CC                          = The C Compiler used. This is automatically set based
+#                                          on whether the clang version is set, optional.
+#
+#   KERNEL_CLANG_TRIPLE                = Target triple for clang (e.g. aarch64-linux-gnu-)
+#                                          defaults to arm-linux-gnu- for arm
+#                                                      aarch64-linux-gnu- for arm64
+#                                                      x86_64-linux-gnu- for x86
+#
+#   NEED_KERNEL_MODULE_ROOT            = Optional, if true, install kernel
+#                                          modules in root instead of vendor
+#   NEED_KERNEL_MODULE_SYSTEM          = Optional, if true, install kernel
+#                                          modules in system instead of vendor
+
 ifneq ($(TARGET_NO_KERNEL),true)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 
@@ -18,7 +58,7 @@ TARGET_KERNEL_ARCH ?= x86_64
 KERNEL_TARGET := bzImage
 KERNEL_CONFIG_DIR := arch/x86/configs
 TARGET_KERNEL_CONFIG ?= android-x86_64_defconfig
-else
+else ifeq ($(KERNEL_ARCH),x86)
 TARGET_KERNEL_ARCH ?= x86
 KERNEL_CONFIG_DIR := arch/x86/configs
 TARGET_KERNEL_CONFIG ?= android-x86_defconfig
