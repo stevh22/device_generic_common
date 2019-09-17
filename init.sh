@@ -219,6 +219,12 @@ function init_hal_power()
 		e-tab*Pro)
 			set_prop_if_empty sleep.state force
 			;;
+		BayTrail*)
+			if [[ "$BIOSVERSION" == "H1D_S806_206" ]]; then  # Workaround for Chuwi Hi8
+				# Disable false detected battery module
+				rmmod_if_exist acpi_tpt10_battery
+			fi
+			;;
 		*)
 			;;
 	esac
@@ -350,6 +356,16 @@ function init_tscal()
 		ST70416-6*)
 			modprobe gslx680_ts_acpi
 			;&
+		BayTrail*)
+			if [[ "$BIOSVERSION" == "H1D_S806_206" ]]; then # Identify Chuwi Hi8
+				create_pointercal
+				
+				# change to correct touchscreen module
+				rmmod_if_exist gslx680_ts_acpi					
+				modprobe silead gsl_fw_name=silead/gsl1680-chuwi-hi8.fw
+				return
+			fi
+			;;
 		T91|T101|ET2002|74499FU|945GSE-ITE8712|CF-19[CDYFGKLP]*)
 			create_pointercal
 			return
@@ -509,6 +525,7 @@ PATH=/sbin:/system/bin:/system/xbin
 DMIPATH=/sys/class/dmi/id
 BOARD=$(cat $DMIPATH/board_name)
 PRODUCT=$(cat $DMIPATH/product_name)
+BIOSVERSION=$(cat $DMIPATH/bios_version)
 
 # import cmdline variables
 for c in `cat /proc/cmdline`; do
